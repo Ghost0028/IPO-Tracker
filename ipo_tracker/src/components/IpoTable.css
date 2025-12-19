@@ -1,0 +1,119 @@
+/* Container and table styling */
+.ipo-table-container {
+  
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin: 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ipo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table header */
+.ipo-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.ipo-table thead th {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Table body */
+.ipo-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ipo-table tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ipo-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Table data cells */
+.ipo-table td {
+  padding: 1rem 1.5rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Alternate row colors for better readability */
+.ipo-table tbody tr:nth-child(odd) {
+  background-color: #f9fafb;
+}
+
+.ipo-table tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ipo-table-container {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .ipo-table thead th {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .ipo-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .ipo-table-container {
+    overflow-x: auto;
+  }
+}
+
+/* Column-specific styling */
+.ipo-name {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.ipo-price {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.ipo-gmp {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.ipo-subscription {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* Loading and empty state */
+.ipo-empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+  font-size: 1.1rem;
+}

@@ -89,23 +89,9 @@
   }
 }
 
-/* Column-specific styling */
-.ipo-name {
-  font-weight: 600;
-  color: #667eea;
-}
 
-.ipo-price {
-  color: #10b981;
-  font-weight: 500;
-}
 
-.ipo-gmp {
-  color: #f59e0b;
-  font-weight: 500;
-}
-
-.ipo-subscription {
+.ipo-data {
   color: #ef4444;
   font-weight: 500;
 }

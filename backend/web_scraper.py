@@ -76,10 +76,14 @@ def scrape_url(url, idx):
     return dfs[0]
 
 def merge_dataframes(gmp_df, subs_df):
-    gmp_names=gmp_df['Name▲▼'].str.split().str[0].str.lower().tolist()
-    mask = subs_df[0].str.split().str[0].str.lower().isin(gmp_names)
-    merged=subs_df[mask].copy()
-    return merged
+    # print(gmp_df.columns)
+    gmp_df['Merge_key'] = gmp_df['Name▲▼'].str.split().str[0].str.lower()
+    subs_df['Merge_key'] = subs_df['IPO / Stock'].str.split().str[0].str.lower()
+
+    merged=gmp_df.merge(subs_df,on='Merge_key',how='left') #adding a new column in both df and then using it to do join and then select req cols
+    return merged[['Name▲▼', 'GMP▲▼',  'Price (₹)▲▼',
+       'IPO Size (₹ in cr)▲▼', 'Lot▲▼', 'Close▲▼',
+       'Listing▲▼','QIB', 'NII', 'RII']]
 
 def collect_and_merge():
     date_column='Close▲▼'
@@ -94,9 +98,14 @@ def collect_and_merge():
     upcoming_ipos=upcoming_ipos[upcoming_ipos[date_column].dt.date >= today].copy() #creating copy of data by filtering it
     # print(upcoming_ipos[['Name▲▼','GMP▲▼','Listing▲▼']] )
 
-    subs_df=scrape_url(urls[1],1)
+    raw_df=scrape_url(urls[1],1)
 
-    merged_df=merge_dataframes(upcoming_ipos,subs_df)
+    headers = raw_df.iloc[0]  # Row 0 = actual headers
+    data_df = raw_df.iloc[1:].reset_index(drop=True)  # Data starts row 1
+   
+    data_df.columns=headers #Doing proper assignment of header
+
+    merged_df=merge_dataframes(upcoming_ipos,data_df)
     print(merged_df)
 
 collect_and_merge()

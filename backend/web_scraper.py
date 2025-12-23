@@ -9,32 +9,10 @@ import pandas as pd
 from io import StringIO
 from datetime import datetime,date
 
-url="https://www.investorgain.com/report/live-ipo-gmp/331/"
-options= Options()
-options.add_argument('--headless') #Stops the pop up
+urls=["https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "https://www.investorgain.com/report/ipo-subscription-live/333/"] 
 
 
-driver =webdriver.Chrome(options)
-
-driver.get(url)
-wait = WebDriverWait(driver, 15)
-try:
-    wait.until(EC.presence_of_element_located((By.TAG_NAME, "table")))
-    print("✅ Table detected!")
-except:
-    print("❌ No table found after 15s")
-
-time.sleep(3) #sleep for 3 unit of time for js to load
-
-#wraping in stringio to supress warnings
-dfs= pd.read_html(StringIO(driver.page_source)) #Returns a list of dataframes
-
-driver.quit()
-
-main_dfs=dfs[0] #first item of the list
-
-date_column='Close▲▼'
-#Will use the above column to filter the data 
 def modify_ipo_date(date_str):  
     '''Convert the date format from 31-Dec kind to the standard python date form'''
     """Parse '30-Dec' → datetime (handles NaN, None, non-strings)"""
@@ -70,16 +48,59 @@ def modify_ipo_date(date_str):
         return datetime(current_year+1,month,int(close_date))
     else:  #Was skipping the case where the month is dec , this was causing issue
         return datetime(current_year, month, int(close_date)) 
+
+def scrape_url(url, idx):
+    options= Options()
+    options.add_argument('--headless') #Stops the pop up
+    options.add_argument('--no-sandbox')            
+    options.add_argument('--disable-dev-shm-usage')  
+    options.add_argument('--disable-gpu')          
+    options.add_argument('--window-size=1920,1080') 
+    driver =webdriver.Chrome(options)
+    print(f"\n🔄 Driver {idx}: {url}")
+    driver.get(url)
     
+    wait = WebDriverWait(driver, 15)
+    try:
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "table")))
+        print("✅ Table detected!")
+    except:
+        print("❌ No table")
+        driver.quit()
+        return None
+    
+    time.sleep(3)#sleep for 3 unit of time for js to load
+    dfs = pd.read_html(StringIO(driver.page_source))
+    driver.quit()  # Clean quit per URL
+    
+    return dfs[0]
 
-# print(main_dfs[date_column])
-main_dfs[date_column]=main_dfs[date_column].apply(modify_ipo_date)
-today=date.today()
-#print(today)
-# print("\n After changing \n")
-# print(main_dfs[date_column])
+for i,url in enumerate(urls):
+    
+    main_dfs=scrape_url(url,i)
 
-upcoming_ipos=main_dfs[main_dfs[date_column].dt.date >= today].copy() #creating copy of data by filtering it
+    if i==0:
+        date_column='Close▲▼'
+        #Will use the above column to filter the data 
 
 
-print(upcoming_ipos)
+        # print(main_dfs[date_column])
+        main_dfs[date_column]=main_dfs[date_column].apply(modify_ipo_date)
+        today=date.today()
+        #print(today)
+        # print("\n After changing \n")
+        # print(main_dfs[date_column])
+
+        upcoming_ipos=main_dfs[main_dfs[date_column].dt.date >= today].copy() #creating copy of data by filtering it
+        print(upcoming_ipos[['Name▲▼','GMP▲▼','Listing▲▼']] )
+        print('\n\n\n')
+    elif i==1:
+        print(main_dfs.columns)
+
+
+
+
+   
+
+ 
+

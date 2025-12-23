@@ -10,7 +10,7 @@ from io import StringIO
 from datetime import datetime,date
 
 urls=["https://www.investorgain.com/report/live-ipo-gmp/331/",
-      "https://www.investorgain.com/report/ipo-subscription-live/333/"] 
+      "https://ipowatch.in/ipo-subscription-status-today/"] 
 
 
 def modify_ipo_date(date_str):  
@@ -35,8 +35,8 @@ def modify_ipo_date(date_str):
 
     
 
-    close_date,month_str =date_str.split('-')
-
+    close_date,month_str =date_str.split('-')[:2]
+    month_str=month_str.split(' ')[0] # This line added since they modified the data , it should still work after they fix
     #print(f"DEBUG: close_date='{close_date}', month_str='{month_str}'")  
 
     month_map ={'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6,
@@ -75,28 +75,31 @@ def scrape_url(url, idx):
     
     return dfs[0]
 
-for i,url in enumerate(urls):
-    
-    main_dfs=scrape_url(url,i)
+def merge_dataframes(gmp_df, subs_df):
+    gmp_names=gmp_df['Name▲▼'].str.split().str[0].str.lower().tolist()
+    mask = subs_df[0].str.split().str[0].str.lower().isin(gmp_names)
+    merged=subs_df[mask].copy()
+    return merged
 
-    if i==0:
-        date_column='Close▲▼'
-        #Will use the above column to filter the data 
-
-
-        # print(main_dfs[date_column])
-        main_dfs[date_column]=main_dfs[date_column].apply(modify_ipo_date)
-        today=date.today()
+def collect_and_merge():
+    date_column='Close▲▼'
+    #Will use the above column to filter the data 
+    upcoming_ipos=scrape_url(urls[0],0)
+    upcoming_ipos[date_column]=upcoming_ipos[date_column].apply(modify_ipo_date)
+    today=date.today()
         #print(today)
         # print("\n After changing \n")
         # print(main_dfs[date_column])
 
-        upcoming_ipos=main_dfs[main_dfs[date_column].dt.date >= today].copy() #creating copy of data by filtering it
-        print(upcoming_ipos[['Name▲▼','GMP▲▼','Listing▲▼']] )
-        print('\n\n\n')
-    elif i==1:
-        print(main_dfs.columns)
+    upcoming_ipos=upcoming_ipos[upcoming_ipos[date_column].dt.date >= today].copy() #creating copy of data by filtering it
+    # print(upcoming_ipos[['Name▲▼','GMP▲▼','Listing▲▼']] )
 
+    subs_df=scrape_url(urls[1],1)
+
+    merged_df=merge_dataframes(upcoming_ipos,subs_df)
+    print(merged_df)
+
+collect_and_merge()
 
 
 

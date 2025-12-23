@@ -106,6 +106,20 @@ def collect_and_merge():
     data_df.columns=headers #Doing proper assignment of header
 
     merged_df=merge_dataframes(upcoming_ipos,data_df)
+    column_mapping = {
+    'Name▲▼': 'name',
+    'GMP▲▼': 'gmp', 
+    'Close▲▼': 'close_date',
+    'Listing▲▼': 'listing_date',
+    'Price (₹)▲▼':'price',
+    'IPO Size (₹ in cr)▲▼': 'ipo_size',
+    
+    }
+
+    merged_df = merged_df.rename(columns=column_mapping)
+    merged_df.to_json('ipo_dashboard.json', orient='records', indent=2)
+    print("💾 Saved: ipo_dashboard.json")
+    
     print(merged_df)
 
 collect_and_merge()

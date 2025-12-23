@@ -9,11 +9,6 @@
 using json= nlohmann::json;
 using namespace std;
 
-// initially it would be based on static data before scaling it.
-// we can streamline the input and storing process further once we get the csv
-//format example which would make things simpler
-// make two diff functions for csv and json
-//make a third function which does the actual calculation which will be called by the other two
 void calculate(int issueprice, int gmp ,int subscriptionrate){
     double listingPrice= issueprice *(1+ (gmp*1.0/issueprice));
     double estimatedProbability= 1.0/subscriptionrate;
@@ -21,9 +16,9 @@ void calculate(int issueprice, int gmp ,int subscriptionrate){
     cout<<"Expected Listing price = "<<listingPrice<<endl;
     cout<<"1 in "<<subscriptionrate<<" will get an allotment that is "<<setprecision(2)<<fixed<<estimatedProbability*100<<" % "<<endl;
 
-} //can be further cateegorised into categories like hni etc
+} 
 void readJson(){
-    ifstream file ("data.json");
+    ifstream file ("ipo_dashboard.json");
 if (!file.is_open()){  // In case there is no such file present prints error
     
     cerr<<"Could not open file"<<endl;
@@ -35,10 +30,13 @@ if (!file.is_open()){  // In case there is no such file present prints error
 
   for( const auto &ipo : j){
     
-    string name=ipo["ipo"];
-    int price= ipo["issuePrice"];
-    int gmp =ipo["gmp"];
-    double subscriptionrate=ipo["subscription"];
+    string name=ipo["Name\u25b2\u25bc"];
+    string price= ipo["Price (\u20b9)\u25b2\u25bc"];
+    string gmp =ipo["GMP\u25b2\u25bc"];
+    string ipo_size =ipo["IPO Size (\u20b9 in cr)\u25b2\u25bc"];
+    string qib_subscription_rate =ipo["QIB"]
+    string nii_subscription_rate =ipo["NII"]
+    string rii_subscription_rate =ipo["RII"]
     cout<<name<<" "<<price<<" "<<gmp<<""<<endl;
     calculate(price,gmp,subscriptionrate);
 

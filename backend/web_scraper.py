@@ -108,17 +108,19 @@ def collect_and_merge():
     merged_df=merge_dataframes(upcoming_ipos,data_df)
    
     column_mapping = {
-    'GMP▲▼': 'gmp', 
-    'Close▲▼': 'close_date',
-    'Listing▲▼': 'listing_date',
-    'Price (₹)▲▼':'price',
-    'IPO Size (₹ in cr)▲▼': 'ipo_size',
+    'IPO Name':'Name',    
+    'GMP▲▼': 'GMP', 
+    'Close▲▼': 'Close_date',
+    'Listing▲▼': 'Listing_date',
+    'Price (₹)▲▼':'Price',
+    'IPO Size (₹ in cr)▲▼': 'Ipo_size',
     'Lot▲▼':'Lot_size',
     'NII / HNI':'NII'
     
     }
 
     merged_df = merged_df.rename(columns=column_mapping)
+    merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
     merged_df.to_json('ipo_dashboard.json', orient='records', indent=2)
     
     

@@ -78,12 +78,12 @@ def scrape_url(url, idx):
 def merge_dataframes(gmp_df, subs_df):
     # print(gmp_df.columns)
     gmp_df['Merge_key'] = gmp_df['Name▲▼'].str.split().str[0].str.lower()
-    subs_df['Merge_key'] = subs_df['IPO / Stock'].str.split().str[0].str.lower()
+    subs_df['Merge_key'] = subs_df['IPO Name'].str.split().str[0].str.lower()
 
     merged=gmp_df.merge(subs_df,on='Merge_key',how='left') #adding a new column in both df and then using it to do join and then select req cols
-    return merged[['Name▲▼', 'GMP▲▼',  'Price (₹)▲▼',
-       'IPO Size (₹ in cr)▲▼', 'Lot▲▼', 'Close▲▼',
-       'Listing▲▼','QIB', 'NII', 'RII']]
+    # print(merged.columns)
+    return merged[['IPO Name', 'GMP▲▼', 'Price (₹)▲▼', 'Lot▲▼', 'Close▲▼',
+                   'Type', 'QIB', 'NII / HNI', 'Retail']]
 
 def collect_and_merge():
     date_column='Close▲▼'
@@ -99,28 +99,30 @@ def collect_and_merge():
     # print(upcoming_ipos[['Name▲▼','GMP▲▼','Listing▲▼']] )
 
     raw_df=scrape_url(urls[1],1)
-
+    
     headers = raw_df.iloc[0]  # Row 0 = actual headers
     data_df = raw_df.iloc[1:].reset_index(drop=True)  # Data starts row 1
-   
+    
     data_df.columns=headers #Doing proper assignment of header
-
+    
     merged_df=merge_dataframes(upcoming_ipos,data_df)
+   
     column_mapping = {
-    'Name▲▼': 'name',
     'GMP▲▼': 'gmp', 
     'Close▲▼': 'close_date',
     'Listing▲▼': 'listing_date',
     'Price (₹)▲▼':'price',
     'IPO Size (₹ in cr)▲▼': 'ipo_size',
+    'Lot▲▼':'Lot_size',
+    'NII / HNI':'NII'
     
     }
 
     merged_df = merged_df.rename(columns=column_mapping)
     merged_df.to_json('ipo_dashboard.json', orient='records', indent=2)
-    print("💾 Saved: ipo_dashboard.json")
     
-    print(merged_df)
+    
+    
 
 collect_and_merge()
 

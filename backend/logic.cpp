@@ -4,19 +4,36 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
+#include <string>
+#include <regex>
+#include <iomanip>
 #include "json.hpp"
 
 using json= nlohmann::json;
 using namespace std;
 
-void calculate(int issueprice, int gmp ,int subscriptionrate){
-    double listingPrice= issueprice *(1+ (gmp*1.0/issueprice));
-    double estimatedProbability= 1.0/subscriptionrate;
-
-    cout<<"Expected Listing price = "<<listingPrice<<endl;
-    cout<<"1 in "<<subscriptionrate<<" will get an allotment that is "<<setprecision(2)<<fixed<<estimatedProbability*100<<" % "<<endl;
-
+string extract_gmp_percentage(const std::string& gmp_str) {
+    regex pattern(R"(\((\d+(?:\.\d+)?\%)\))");
+    smatch matches;
+    if (regex_search(gmp_str, matches, pattern)) {
+        
+        return matches[1].str();
+    }
+  
+    return "0.00%";
 } 
+string update_subs_rate(string sub_rate){
+   
+  stringstream ss;
+  //Handle the case of no subscription seperately
+  if(sub_rate[0]=='0') return "<1% ~100%"; 
+  double chance = 1.0/stod(sub_rate) *100;
+  ss<<sub_rate<<" "<<fixed<<setprecision(2)<<chance<<"%";
+  
+
+  return ss.str();
+
+}
 void readJson(){
     ifstream file ("ipo_dashboard.json");
 if (!file.is_open()){  // In case there is no such file present prints error
@@ -27,58 +44,46 @@ if (!file.is_open()){  // In case there is no such file present prints error
 
   json j;
   file>>j;
-
-  for( const auto &ipo : j){
-    
-    string name=ipo["Name\u25b2\u25bc"];
-    string price= ipo["Price (\u20b9)\u25b2\u25bc"];
-    string gmp =ipo["GMP\u25b2\u25bc"];
-    string ipo_size =ipo["IPO Size (\u20b9 in cr)\u25b2\u25bc"];
-    string qib_subscription_rate =ipo["QIB"]
-    string nii_subscription_rate =ipo["NII"]
-    string rii_subscription_rate =ipo["RII"]
-    cout<<name<<" "<<price<<" "<<gmp<<""<<endl;
-    calculate(price,gmp,subscriptionrate);
-
-
-  }
-}
-void readCsv(){
-  ifstream file ("data.csv");
   
-  if (!file.is_open()){  // In case there is no such file present prints error
-    cerr<<"Could not open file"<<endl;
-    return ;
-  }
-  string line;
-  getline(file,line); // this line will be needed incase the data has a useless header
-  stringstream ss(line);
-    string cell;
-    vector <string> heading;
-    while(getline(ss,cell,',')){
-        heading.push_back(cell);
-    }
+  for(  auto &ipo : j){
+    string price=ipo["price"];
+    string gmp =ipo["gmp"];//"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191" need to extract the () part from it
+    gmp=extract_gmp_percentage(gmp);
+    ipo["gmp"]=gmp;
+    string lot_size =ipo["Lot_size"];
 
-  while(getline(file,line)){
-    stringstream strs(line);
-    string data;
-    vector <string> rows;
-    while(getline(strs,data,',')){
-        rows.push_back(data);
+    string qib_subscription_rate =ipo["QIB"];
+    qib_subscription_rate=update_subs_rate(qib_subscription_rate);
+    ipo["QIB"]=qib_subscription_rate;
+    
+    string nii_subscription_rate =ipo["NII"];
+    nii_subscription_rate=update_subs_rate(nii_subscription_rate);
+    ipo["NII"]=nii_subscription_rate;
+
+    string retail_subscription_rate =ipo["Retail"];
+    retail_subscription_rate=update_subs_rate(retail_subscription_rate);
+    ipo["Retail"]=retail_subscription_rate;
+
+    int close_date=ipo["close_date"];
+    ipo["Minimum Capital"]=stoi(lot_size)*stoi(price);
+    
+
+
+  }
+  ofstream out("ipo_react.json");
+    if (out.is_open()) {
+        out << j.dump(4);  // indent=4 for readability
+        cout << "💾 Saved: ipo_react.json (React-ready)" << endl;
+        out.close();
+    } else {
+        cerr << "❌ Failed to write ipo_react.json" << endl;
     }
-    int c=0;
-    for (const auto& k : rows){
-     //checking working
-         cout <<heading[c]<<" "<< k << " ";
-         
-         c++;
-    } 
-    calculate(stoi(rows[1]),stoi(rows[2]),stoi(rows[3]));
-    cout << "\n---------------\n";
 }
-}
+
+
 int main(){
     readJson();
+    return 0;
   };
  
 

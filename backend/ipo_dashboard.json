@@ -56,7 +56,7 @@
   },
   {
     "Name":"Nanta Tech",
-    "GMP":"\u20b96 (2.73%) L\/H (\u20b9): 6 \u2193 \/ 15 \u2191",
+    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 6 \u2193 \/ 15 \u2191",
     "Price":"220",
     "Lot_size":"600",
     "Close_date":"26-Dec-2025",
@@ -67,7 +67,7 @@
   },
   {
     "Name":"Admach Systems",
-    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
+    "GMP":"\u20b95 (2.09%) L\/H (\u20b9): 5 \u2193 \/ 5 \u2191",
     "Price":"239",
     "Lot_size":"600",
     "Close_date":"26-Dec-2025",
@@ -75,60 +75,5 @@
     "QIB":"1.44",
     "NII":"1.61",
     "Retail":"0.90"
-  },
-  {
-    "Name":"Sundrex Oil",
-    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 3 \u2193 \/ 17 \u2191",
-    "Price":"86",
-    "Lot_size":"1600",
-    "Close_date":"24-Dec-2025",
-    "Type":"SME",
-    "QIB":"1.00",
-    "NII":"1.01",
-    "Retail":"1.90"
-  },
-  {
-    "Name":"EPW India",
-    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
-    "Price":"97",
-    "Lot_size":"1200",
-    "Close_date":"24-Dec-2025",
-    "Type":"SME",
-    "QIB":"1.17",
-    "NII":"1.53",
-    "Retail":"1.31"
-  },
-  {
-    "Name":"Dachepalli Publishers",
-    "GMP":"\u20b92 (1.96%) L\/H (\u20b9): 2 \u2193 \/ 10 \u2191",
-    "Price":"102",
-    "Lot_size":"1200",
-    "Close_date":"24-Dec-2025",
-    "Type":"SME",
-    "QIB":"1.29",
-    "NII":"3.04",
-    "Retail":"1.90"
-  },
-  {
-    "Name":"Shyam Dhani",
-    "GMP":"\u20b970 (100.00%) L\/H (\u20b9): 21 \u2193 \/ 70 \u2191",
-    "Price":"70",
-    "Lot_size":"2000",
-    "Close_date":"24-Dec-2025",
-    "Type":"SME",
-    "QIB":"256.24",
-    "NII":"1612.65",
-    "Retail":"1137.92"
-  },
-  {
-    "Name":"Gujarat Kidney",
-    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 3.50 \u2193 \/ 10 \u2191",
-    "Price":"114",
-    "Lot_size":"128",
-    "Close_date":"24-Dec-2025",
-    "Type":"Main",
-    "QIB":"1.06",
-    "NII":"5.73",
-    "Retail":"19.04"
   }
 ]

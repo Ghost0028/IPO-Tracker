@@ -61,7 +61,7 @@
     },
     {
         "Close_date": "26-Dec-2025",
-        "GMP": "2.73%",
+        "GMP": "0.00%",
         "Lot_size": "600",
         "Minimum_Capital": 264000,
         "NII": "<1% ~100%",
@@ -73,7 +73,7 @@
     },
     {
         "Close_date": "26-Dec-2025",
-        "GMP": "0.00%",
+        "GMP": "2.09%",
         "Lot_size": "600",
         "Minimum_Capital": 286800,
         "NII": "1.61 62.11%",
@@ -82,65 +82,5 @@
         "QIB": "1.44 69.44%",
         "Retail": "<1% ~100%",
         "Type": "SME"
-    },
-    {
-        "Close_date": "24-Dec-2025",
-        "GMP": "0.00%",
-        "Lot_size": "1600",
-        "Minimum_Capital": 275200,
-        "NII": "1.01 99.01%",
-        "Name": "Sundrex Oil",
-        "Price": "86",
-        "QIB": "1.00 100.00%",
-        "Retail": "1.90 52.63%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "24-Dec-2025",
-        "GMP": "0.00%",
-        "Lot_size": "1200",
-        "Minimum_Capital": 232800,
-        "NII": "1.53 65.36%",
-        "Name": "EPW India",
-        "Price": "97",
-        "QIB": "1.17 85.47%",
-        "Retail": "1.31 76.34%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "24-Dec-2025",
-        "GMP": "1.96%",
-        "Lot_size": "1200",
-        "Minimum_Capital": 244800,
-        "NII": "3.04 32.89%",
-        "Name": "Dachepalli Publishers",
-        "Price": "102",
-        "QIB": "1.29 77.52%",
-        "Retail": "1.90 52.63%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "24-Dec-2025",
-        "GMP": "100.00%",
-        "Lot_size": "2000",
-        "Minimum_Capital": 280000,
-        "NII": "1612.65 0.06%",
-        "Name": "Shyam Dhani",
-        "Price": "70",
-        "QIB": "256.24 0.39%",
-        "Retail": "1137.92 0.09%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "24-Dec-2025",
-        "GMP": "0.00%",
-        "Lot_size": "128",
-        "Minimum_Capital": 14592,
-        "NII": "5.73 17.45%",
-        "Name": "Gujarat Kidney",
-        "Price": "114",
-        "QIB": "1.06 94.34%",
-        "Retail": "19.04 5.25%",
-        "Type": "Main"
     }
 ]

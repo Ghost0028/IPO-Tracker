@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import './App.css'
 import IpoTable from './components/IpoTable'
 
 function App() {

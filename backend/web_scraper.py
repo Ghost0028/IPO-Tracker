@@ -8,6 +8,7 @@ import time
 import pandas as pd
 from io import StringIO
 from datetime import datetime,date
+import sys #To work with the file path passed when it is called
 
 urls=["https://www.investorgain.com/report/live-ipo-gmp/331/",
       "https://ipowatch.in/ipo-subscription-status-today/"] 
@@ -121,7 +122,8 @@ def collect_and_merge():
 
     merged_df = merged_df.rename(columns=column_mapping)
     merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
-    merged_df.to_json('ipo_dashboard.json', orient='records', indent=2)
+    output_path=sys.argv[1] #made modification here to change file path
+    merged_df.to_json(output_path, orient='records', indent=2)
     
     
     

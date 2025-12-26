@@ -34,8 +34,8 @@ string update_subs_rate(string sub_rate){
   return ss.str();
 
 }
-void readJson(){
-    ifstream file ("ipo_dashboard.json");
+void readJson(const string &inputPath,const string &outputPath){
+    ifstream file (inputPath);
 if (!file.is_open()){  // In case there is no such file present prints error
     
     cerr<<"Could not open file"<<endl;
@@ -71,8 +71,8 @@ if (!file.is_open()){  // In case there is no such file present prints error
 
 
   }
-  string react_path = "../ipo_tracker/public/ipo_react.json"; //so that it writes directly into the required place
-  ofstream out(react_path);
+  
+  ofstream out(outputPath);
     if (out.is_open()) {
         out << j.dump(4);  // indent=4 for readability
         cout << "💾 Saved: ipo_react.json (React-ready)" << endl;
@@ -83,8 +83,11 @@ if (!file.is_open()){  // In case there is no such file present prints error
 }
 
 
-int main(){
-    readJson();
+int main(int argc ,char * argv[]){
+    if (argc < 3) { cerr << "Usage: logic <input_json> <output_json>" << endl; return 1; } 
+    string inputPath = argv[1]; 
+    string outputPath = argv[2];
+    readJson(inputPath,outputPath);
     return 0;
   };
  

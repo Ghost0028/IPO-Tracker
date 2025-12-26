@@ -12,25 +12,25 @@
   },
   {
     "Name":"E to E Transportation",
-    "GMP":"\u20b9135 (77.59%) L\/H (\u20b9): 65 \u2193 \/ 135 \u2191",
+    "GMP":"\u20b9130 (74.71%) L\/H (\u20b9): 65 \u2193 \/ 130 \u2191",
     "Price":"174",
     "Lot_size":"800",
     "Close_date":"30-Dec-2025",
     "Type":"SME",
-    "QIB":"1.00",
-    "NII":"2.94",
-    "Retail":"3.41"
+    "QIB":"0.00",
+    "NII":"1.15",
+    "Retail":"0.63"
   },
   {
     "Name":"Dhara Rail Projects",
-    "GMP":"\u20b921 (16.67%) L\/H (\u20b9): 8 \u2193 \/ 21 \u2191",
+    "GMP":"\u20b917 (13.49%) L\/H (\u20b9): 8 \u2193 \/ 17 \u2191",
     "Price":"126",
     "Lot_size":"1000",
     "Close_date":"26-Dec-2025",
     "Type":"SME",
-    "QIB":"9.51",
-    "NII":"37.58",
-    "Retail":"18.11"
+    "QIB":"4.55",
+    "NII":"13.69",
+    "Retail":"6.88"
   },
   {
     "Name":"Bai Kakaji Polymers",
@@ -40,8 +40,8 @@
     "Close_date":"26-Dec-2025",
     "Type":"SME",
     "QIB":"3.94",
-    "NII":"2.13",
-    "Retail":"0.87"
+    "NII":"1.37",
+    "Retail":"0.47"
   },
   {
     "Name":"Apollo Techno Industries",
@@ -50,9 +50,9 @@
     "Lot_size":"1000",
     "Close_date":"26-Dec-2025",
     "Type":"SME",
-    "QIB":"9.85",
-    "NII":"24.48",
-    "Retail":"12.39"
+    "QIB":"1.66",
+    "NII":"14.22",
+    "Retail":"8.45"
   },
   {
     "Name":"Nanta Tech",
@@ -61,9 +61,9 @@
     "Lot_size":"600",
     "Close_date":"26-Dec-2025",
     "Type":"SME",
-    "QIB":"3.99",
-    "NII":"1.04",
-    "Retail":"0.91"
+    "QIB":"0.00",
+    "NII":"0.86",
+    "Retail":"0.52"
   },
   {
     "Name":"Admach Systems",
@@ -73,7 +73,7 @@
     "Close_date":"26-Dec-2025",
     "Type":"SME",
     "QIB":"1.44",
-    "NII":"4.79",
-    "Retail":"2.21"
+    "NII":"3.41",
+    "Retail":"1.36"
   }
 ]

@@ -2,36 +2,51 @@ import subprocess
 import os
 import datetime
 
+SCRIPT_PATH = os.path.abspath(__file__) 
+BACKEND_PATH = os.path.dirname(SCRIPT_PATH) 
+PROJECT_ROOT = os.path.dirname(BACKEND_PATH) 
+REACT_PATH = os.path.join(PROJECT_ROOT, "ipo_tracker") 
+BACKEND_JSON = os.path.join(BACKEND_PATH, "ipo_dashboard.json") 
+REACT_JSON = os.path.join(REACT_PATH, "public", "ipo_react.json")
+
+# def get_file_paths(): #function to return the path of files making it dynamic removing the function because its not really needed
+#     script_path=os.path.abspath(__file__)
+#     backend_path=os.path.dirname(script_path)
+#     main_directory_path=os.path.dirname(backend_path)
+#     react_path=os.path.join(main_directory_path,"ipo_tracker")
+#     backend_json_file=os.path.join(backend_path,"ipo_dashboard.json")
+#     react_json_file = os.path.join(react_path, "public", "ipo_react.json") 
+#     return backend_path, main_directory_path, react_path, backend_json_file,react_json_file
+
+
 def run_scraper():
     print("Running scraper...")
-    subprocess.run(["python", "web_scraper.py"], check=True)
+    subprocess.run(["python", os.path.join(BACKEND_PATH,"web_scraper.py"),BACKEND_JSON], check=True)
 
 def run_cpp():
     print("Compiling C++ program...")
-    subprocess.run(["g++", "logic.cpp", "-o", "logic"], check=True)
+  
+    subprocess.run(["g++",os.path.join(BACKEND_PATH,"logic.cpp") , "-o", os.path.join(BACKEND_PATH,"logic")], check=True)
     print("Running C++ processor...")
-    exe = "logic.exe" if os.name == "nt" else ".logic"
-    subprocess.run([exe], check=True)
+    exe = os.path.join(BACKEND_PATH,"logic.exe") if os.name == "nt" else os.path.join(BACKEND_PATH,".logic")
+    subprocess.run([exe,BACKEND_JSON,REACT_JSON], check=True)
 
 def run_react():
     print("Starting react app")
-    script_path=os.path.abspath(__file__)
-    backend_path=os.path.dirname(script_path)
-    main_directory_path=os.path.dirname(backend_path)
-    react_path=os.path.join(main_directory_path,"ipo_tracker")
-    os.chdir(react_path) #changing directory to correct directory to run the react app
+    
+    
+    os.chdir(REACT_PATH) #changing directory to correct directory to run the react app
     subprocess.run("npm run dev",shell=True,check=True)
 
 def should_update():
-    # Path to your JSON file
-    json_file = "../ipo_tracker/public/ipo_react.json"
+    
 
     # If the data processors have never run before we need to run them regardless of the time
-    if not os.path.exists(json_file):
+    if not os.path.exists(BACKEND_JSON):
         return True
 
     # Rule 2: If JSON is older than 6 hours → force update
-    last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(json_file))
+    last_modified = datetime.datetime.fromtimestamp(os.path.getmtime(BACKEND_JSON))
     now = datetime.datetime.now()
     age_hours = (now - last_modified).total_seconds() / 3600
     if age_hours >= 6:

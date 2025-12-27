@@ -1,4 +1,3 @@
-/* Global reset */
 body, html {
   margin: 0;
   padding: 0;
@@ -8,36 +7,32 @@ body, html {
   min-height: 100vh;
 }
 
-/* App wrapper */
-.App {
+/* Root mount point created by React */
+#root {
+  width: 100%;
+  min-height: 100vh;   /* ensure full viewport height */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem;
 }
 
-/* Page header */
-.page-header {
+/* Main app wrapper */
+.App {
+  flex: 1;                     /* take all available space inside #root */
+  display: flex;
+  flex-direction: column;       /* stack header, table, footer */
+  align-items: center;          /* center horizontally */
+  justify-content: flex-start;  /* keep content at top */
   text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.page-header {
   margin-bottom: 2rem;
 }
 
-.page-header h1 {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin: 0;
-}
-
-.page-header p {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
-/* Footer */
 .page-footer {
-  margin-top: 3rem;
-  text-align: center;
+  margin-top: auto;   /* push footer to bottom if content is short */
   font-size: 0.85rem;
   color: #888;
 }

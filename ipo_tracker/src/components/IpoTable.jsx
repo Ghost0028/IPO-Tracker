@@ -6,7 +6,7 @@ function IpoTable() {
   const [loading, setLoading] = useState(true);
   const [filterType,setFilterType]=useState("ALL")
   const [currentPage,setCurrentPage]=useState(1);
-  const rowsPerPage=2;
+  const rowsPerPage=4;
 
   useEffect(() => {
     fetch('/ipo_react.json')
@@ -34,7 +34,7 @@ function IpoTable() {
   const totalPages = Math.ceil(filtered_data.length / rowsPerPage);
 
   return (
-    <div>
+    <div className='Ipo'>
     <select onChange={(e)=> {
       setFilterType(e.target.value)
       setCurrentPage(1)
@@ -44,7 +44,7 @@ function IpoTable() {
        <option value="SME">SME</option>
     </select>
     
-    <div className="ipo-table-container">
+    <div className="ipo-table-container ${currentRows.length === 0 ? 'is-empty' : ''}">
       {currentRows.length === 0 ? (
         <div className="ipo-empty-state">No IPO data available in {filterType} category </div>
       ) : (
@@ -82,7 +82,7 @@ function IpoTable() {
         </table>
 
       )}
-    <div className="pagination">
+      {currentRows.length >0 && (<div className="pagination">
         {Array.from({ length: totalPages }, (_, i) => (
             <button key={i} onClick={() => setCurrentPage(i + 1)}
               className={currentPage === i + 1 ? "active" : ""}
@@ -91,6 +91,7 @@ function IpoTable() {
             </button>
         ))}
     </div>  
+      )}
     </div>
     </div>
   );

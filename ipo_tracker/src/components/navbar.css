@@ -1,0 +1,55 @@
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navbar-left {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  text-align: left;
+}
+.brand-name{
+    font-size: 1.2rem;
+  font-weight: 600;
+}
+.brand-tag{
+    font-size: 0.8rem;
+  color: #ddd; /* lighter shade for subtlety */
+  margin-top: 0.2rem;
+}
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.nav-button {
+  background: transparent;
+  border: 1px solid white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}

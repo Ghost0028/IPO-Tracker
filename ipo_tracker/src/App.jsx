@@ -1,10 +1,12 @@
 import './App.css'
 import IpoTable from './components/IpoTable'
+import Navbar from './components/Navbar'
 
 function App() {
  
   return (
     <div className="App">
+      <Navbar />
       <header className="page-header">
         <h1>IPO Tracker</h1>
         <p>Stay updated with the latest open IPOs</p>
@@ -14,6 +16,10 @@ function App() {
 
       <footer className="page-footer">
         <p>Data auto-refreshed twice daily • Powered by React</p>
+        <p className="disclaimer">
+        Disclaimer: GMP does not represent the actual listing price. It can vary based on demand. 
+        We are not promoting any IPOs. Please do your own analysis before investing.
+        </p>
       </footer>
     </div>
   )

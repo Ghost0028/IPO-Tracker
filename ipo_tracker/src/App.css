@@ -23,8 +23,10 @@ body, html {
   align-items: center;          /* center horizontally */
   justify-content: flex-start;  /* keep content at top */
   text-align: center;
-  padding: 2rem;
+  
+  padding-top: 0%;
   box-sizing: border-box;
+  margin-top: 0%;
 }
 
 .page-header {
@@ -36,3 +38,11 @@ body, html {
   font-size: 0.85rem;
   color: #888;
 }
+.disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #999;
+  max-width: 800px;
+  line-height: 1.4;
+}
+

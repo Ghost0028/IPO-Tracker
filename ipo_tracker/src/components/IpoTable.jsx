@@ -36,7 +36,7 @@ function IpoTable() {
   return (
     <div>
     <div className='filter-bar'>
-    <select onChange={(e)=> {
+    <select  onChange={(e)=> {
       setFilterType(e.target.value)
       setCurrentPage(1)
       }}>
@@ -47,7 +47,7 @@ function IpoTable() {
     </div>  
     <div className="ipo-table-container ${currentRows.length === 0 ? 'is-empty' : ''}">
       {currentRows.length === 0 ? (
-        <div className="ipo-empty-state">No IPO data available in {filterType} category </div>
+        <div className="ipo-empty-state">No IPO data available in this category </div>
       ) : (
         <table className="ipo-table">
           <thead>

@@ -5,8 +5,11 @@ body, html {
   background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
   color: #333;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */  
+ 
 }
-
+ * { box-sizing: border-box; /* padding included in width */ }
 /* Root mount point created by React */
 #root {
   width: 100%;
@@ -23,7 +26,7 @@ body, html {
   align-items: center;          /* center horizontally */
   justify-content: flex-start;  /* keep content at top */
   text-align: center;
-  
+  width: 100%;
   padding-top: 0%;
   box-sizing: border-box;
   margin-top: 0%;

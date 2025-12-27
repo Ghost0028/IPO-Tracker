@@ -52,10 +52,8 @@ def should_update():
     if age_hours >= 6:
         return True
 
-    # Rule 3: Scheduled times (10 AM and 8 PM)
-    if (now.hour == 10 or now.hour == 20) and now.minute < 10:
-        return True
-
+   
+    
     # Otherwise → skip backend
     return False
 def run():

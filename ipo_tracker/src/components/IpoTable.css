@@ -8,8 +8,8 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
   min-height: 300px;       /* consistent height even if empty */
-  max-width: 1200px;       /* cap width on large screens */
-  width: 100%;             /* fill parent width */
+  max-width: 100%;       /*cap width on large screens */
+  width: 80%;             /* fill parent width */
   text-align: center;
 }
 

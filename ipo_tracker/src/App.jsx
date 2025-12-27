@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <header className="page-header">
-        <h1>IPO Tracker</h1>
+        <h2>IPO Tracker</h2>
         <p>Stay updated with the latest open IPOs</p>
       </header>
 

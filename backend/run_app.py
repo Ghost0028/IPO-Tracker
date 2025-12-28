@@ -53,7 +53,6 @@ def should_update():
         return True
 
    
-    
     # Otherwise → skip backend
     return False
 def run():

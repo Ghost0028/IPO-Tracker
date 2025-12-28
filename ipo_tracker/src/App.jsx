@@ -15,8 +15,8 @@ function App() {
       <IpoTable />
 
       <footer className="page-footer">
-        <p>Data auto-refreshed twice daily • Powered by React</p>
-        <p className="disclaimer">
+        <p>Data auto-refreshed every 6 hours • Powered by React</p>
+        <p className="page-footer">
         Disclaimer: GMP does not represent the actual listing price. It can vary based on demand. 
         We are not promoting any IPOs. Please do your own analysis before investing.
         </p>

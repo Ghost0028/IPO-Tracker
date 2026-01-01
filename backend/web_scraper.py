@@ -26,6 +26,9 @@ urls = [
 
 def modify_ipo_date(date_str):
     """Convert '30-Dec' style strings to datetime objects, handle NaN/missing values."""
+    "This code doesn't take into consideration the fact that when we move into lets say jan now dec is considered as > even if it "
+    "was past year which is causing the issue "
+    "We can merge some logic that if the gap in days is >10 it cant be true case which will handle the issue"
     current_year = date.today().year
     current_month = date.today().month
     current_date = date.today().day
@@ -52,7 +55,8 @@ def modify_ipo_date(date_str):
     if not month:
         logging.warning(f"Unknown month string: {month_str}")
         return datetime(current_year - 1, current_month, current_date)
-
+    if current_month < month-1: 
+        return datetime(current_year -1, month, int(close_date))
     if current_month != 12:
         return datetime(current_year, month, int(close_date))
     elif current_month == 12 and month == 1:
@@ -84,6 +88,7 @@ def scrape_url(url, idx):
         logging.info("Table detected!")
         time.sleep(3)  # allow JS to load
         dfs = pd.read_html(StringIO(driver.page_source))
+        
         return dfs[0]
     except Exception as e:
         logging.exception(f"Failed to scrape {url}")
@@ -123,7 +128,7 @@ def collect_and_merge():
         headers = raw_df.iloc[0]
         data_df = raw_df.iloc[1:].reset_index(drop=True)
         data_df.columns = headers
-
+        
         merged_df = merge_dataframes(upcoming_ipos, data_df)
 
         column_mapping = {
@@ -139,7 +144,8 @@ def collect_and_merge():
 
         merged_df = merged_df.rename(columns=column_mapping)
         merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
-
+        merged_df=merged_df.drop_duplicates(subset=['Name'],keep='first')
+        "Could make a better version where rather than selecting the first one, we choose the one with most values or no nulls"
         output_path = "./ipo_dashboard.json"
         merged_df.to_json(output_path, orient='records', indent=2)
         logging.info(f"Data successfully written to {output_path}")

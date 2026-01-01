@@ -1,0 +1,54 @@
+name: Update processed data
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # runs every 6 hours (UTC)
+  workflow_dispatch:        # allows manual run from Actions tab
+
+jobs:
+  build-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.9"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Install Google Chrome 
+        run: |
+          sudo apt-get update 
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Build C++ processor
+        run: |
+          mkdir -p build
+          g++ -O2 -std=c++20 backend/logic.cpp -o build/logic
+
+      - name: Run scraper
+        run: |
+          python backend/web_scraper.py
+
+      - name: Run processor
+        run: |
+          ./build/logic --in backend/ipo_dashboard.json --out ipo_tracker/public/ipo_react.json
+
+      - name: Commit and push updated JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ipo_tracker/public/data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update processed JSON [skip ci]"
+            git push
+          fi

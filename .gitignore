@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node/React
+backend/ipo_dashboard.json
+ipo_tracker/node_modules/
+ipo_tracker/build/
+
+# Logs
+*.log
+backend/logs/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db

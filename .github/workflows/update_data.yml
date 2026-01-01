@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13.9"
+          python-version: "3.12"
 
       - name: Install Python dependencies
         run: |
@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ipo_tracker/public/data.json
+          git add ipo_tracker/public/ipo_react.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

@@ -79,7 +79,7 @@ def scrape_url(url, idx):
 
     try:
         driver.get(url)
-        wait = WebDriverWait(driver, 30)
+        wait = WebDriverWait(driver, 15)
         wait.until(EC.presence_of_element_located((By.TAG_NAME, "table")))
         logging.info("Table detected!")
         time.sleep(3)  # allow JS to load

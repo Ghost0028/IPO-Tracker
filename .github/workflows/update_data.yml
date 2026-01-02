@@ -39,9 +39,7 @@ jobs:
 
       - name: Run processor
         run: |
-          ./build/logic \
-            --in $GITHUB_WORKSPACE/backend/ipo_dashboard.json \
-            --out $GITHUB_WORKSPACE/ipo_tracker/public/ipo_react.json
+          ./build/logic $GITHUB_WORKSPACE/backend/ipo_dashboard.json $GITHUB_WORKSPACE/ipo_tracker/public/ipo_react.json
 
       - name: Commit and push updated JSON
         run: |

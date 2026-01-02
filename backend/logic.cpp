@@ -32,8 +32,7 @@ string update_subs_rate(const string& sub_rate) {
     }
 }
 
-int readJson() {
-    string inputPath = "./ipo_dashboard.json";
+int readJson(const string& inputPath, const string& outputPath) {   // 🔹 CHANGED: accept paths as arguments
     ifstream file(inputPath);
     if (!file.is_open()) {
         cerr << "❌ Could not open input file: " << inputPath << endl;
@@ -72,8 +71,7 @@ int readJson() {
         }
     }
 
-    string outputPath = "../ipo_tracker/public/ipo_react.json";
-    ofstream out(outputPath);
+    ofstream out(outputPath);   // 🔹 CHANGED: use outputPath directly, no "../"
     if (out.is_open()) {
         out << j.dump(4);
         cout << "💾 Saved: " << outputPath << endl;
@@ -85,6 +83,15 @@ int readJson() {
     }
 }
 
-int main() {
-    return readJson(); // propagate success/failure
+int main(int argc, char* argv[]) {
+    // 🔹 CHANGED: allow passing input/output paths via CLI args
+    string inputPath = "./ipo_dashboard.json";
+    string outputPath = "./ipo_react.json";  // default relative path
+
+    if (argc > 2) {
+        inputPath = argv[1];
+        outputPath = argv[2];
+    }
+
+    return readJson(inputPath, outputPath); // 🔹 CHANGED: pass paths into function
 }

@@ -37,13 +37,11 @@ jobs:
         run: |
           python backend/web_scraper.py
 
-      - name: Prepare output directory
-        run: |
-          mkdir -p ipo_tracker/public
-
       - name: Run processor
         run: |
-          ./build/logic --in backend/ipo_dashboard.json --out ipo_tracker/public/ipo_react.json
+          ./build/logic \
+            --in $GITHUB_WORKSPACE/backend/ipo_dashboard.json \
+            --out $GITHUB_WORKSPACE/ipo_tracker/public/ipo_react.json
 
       - name: Commit and push updated JSON
         run: |

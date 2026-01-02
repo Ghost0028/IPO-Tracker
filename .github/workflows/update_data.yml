@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-update:
     runs-on: ubuntu-latest
+    permissions:            # 🔑 NEW: grant write access to GITHUB_TOKEN
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -50,5 +52,7 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "chore: update processed JSON [skip ci]"
-            git push
+            git push origin HEAD:${{ github.ref }}
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 🔑 NEW: use Actions token

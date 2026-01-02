@@ -1,7 +1,7 @@
 [
   {
     "Name":"Victory Electric Vehicles",
-    "GMP":"\u20b9-- (%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
+    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
     "Price":"41",
     "Lot_size":"3000",
     "Close_date":"09-Jan-2026",
@@ -12,7 +12,7 @@
   },
   {
     "Name":"Yajur Fibres",
-    "GMP":"\u20b9-- (%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
+    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
     "Price":"174",
     "Lot_size":"800",
     "Close_date":"09-Jan-2026",
@@ -34,13 +34,13 @@
   },
   {
     "Name":"Modern Diagnostic",
-    "GMP":"\u20b914 (15.56%) L\/H (\u20b9): 10 \u2193 \/ 14 \u2191",
+    "GMP":"\u20b917 (18.89%) L\/H (\u20b9): 10 \u2193 \/ 17 \u2191",
     "Price":"90",
     "Lot_size":"1600",
     "Close_date":"02-Jan-2026",
     "Type":"SME",
-    "QIB":"8.94",
-    "NII":"53.22",
-    "Retail":"33.85"
+    "QIB":"89.09",
+    "NII":"375.27",
+    "Retail":"178.93"
   }
 ]

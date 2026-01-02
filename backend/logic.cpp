@@ -86,7 +86,7 @@ int readJson(const string& inputPath, const string& outputPath) {   // 🔹 CHAN
 int main(int argc, char* argv[]) {
     // 🔹 CHANGED: allow passing input/output paths via CLI args
     string inputPath = "./ipo_dashboard.json";
-    string outputPath = "./ipo_react.json";  // default relative path
+    string outputPath = "../ipo_tracker/public/ipo_react.json";  // default relative path
 
     if (argc > 2) {
         inputPath = argv[1];

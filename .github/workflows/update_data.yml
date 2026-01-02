@@ -37,6 +37,10 @@ jobs:
         run: |
           python backend/web_scraper.py
 
+      - name: Prepare output directory
+        run: |
+          mkdir -p ipo_tracker/public
+
       - name: Run processor
         run: |
           ./build/logic --in backend/ipo_dashboard.json --out ipo_tracker/public/ipo_react.json

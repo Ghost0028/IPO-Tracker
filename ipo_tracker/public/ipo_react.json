@@ -37,14 +37,14 @@
     },
     {
         "Close_date": "02-Jan-2026",
-        "GMP": "15.56%",
+        "GMP": "18.89%",
         "Lot_size": "1600",
         "Minimum_Capital": 288000,
-        "NII": "53.22 1.88%",
+        "NII": "375.27 0.27%",
         "Name": "Modern Diagnostic",
         "Price": "90",
-        "QIB": "8.94 11.19%",
-        "Retail": "33.85 2.95%",
+        "QIB": "89.09 1.12%",
+        "Retail": "178.93 0.56%",
         "Type": "SME"
     }
 ]

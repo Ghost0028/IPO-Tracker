@@ -43,6 +43,8 @@ def modify_ipo_date(date_str):
     month_map ={'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6,
                 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
     month=month_map[month_str]
+    if current_month < month-1:
+        return  datetime(current_year-1,month,int(close_date))
     if(current_month!=12):
         return  datetime(current_year,month,int(close_date)) #since date is string 
     elif(current_month==12 and month==1): # this means we move to next year
@@ -90,6 +92,7 @@ def collect_and_merge():
     date_column='Close▲▼'
     #Will use the above column to filter the data 
     upcoming_ipos=scrape_url(urls[0],0)
+    upcoming_ipos=upcoming_ipos.dropna()
     upcoming_ipos[date_column]=upcoming_ipos[date_column].apply(modify_ipo_date)
     today=date.today()
         #print(today)
@@ -100,12 +103,14 @@ def collect_and_merge():
     # print(upcoming_ipos[['Name▲▼','GMP▲▼','Listing▲▼']] )
 
     raw_df=scrape_url(urls[1],1)
-    
+    raw_df=raw_df.dropna()
+
     headers = raw_df.iloc[0]  # Row 0 = actual headers
     data_df = raw_df.iloc[1:].reset_index(drop=True)  # Data starts row 1
     
     data_df.columns=headers #Doing proper assignment of header
     
+
     merged_df=merge_dataframes(upcoming_ipos,data_df)
    
     column_mapping = {
@@ -122,6 +127,7 @@ def collect_and_merge():
 
     merged_df = merged_df.rename(columns=column_mapping)
     merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
+    merged_df=merged_df.drop_duplicates(subset=['Name'],keep='first')
     output_path=sys.argv[1] #made modification here to change file path
     merged_df.to_json(output_path, orient='records', indent=2)
     

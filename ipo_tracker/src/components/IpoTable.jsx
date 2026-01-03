@@ -34,7 +34,7 @@ function IpoTable() {
   const totalPages = Math.ceil(filtered_data.length / rowsPerPage);
 
   return (
-    <div>
+    <div className='top-div'>
     <div className='filter-bar'>
     <select  onChange={(e)=> {
       setFilterType(e.target.value)
@@ -83,7 +83,9 @@ function IpoTable() {
         </table>
 
       )}
-      {currentRows.length >0 && (<div className="pagination">
+      
+    </div>
+    {currentRows.length >0 && (<div className="pagination">
         {Array.from({ length: totalPages }, (_, i) => (
             <button key={i} onClick={() => setCurrentPage(i + 1)}
               className={currentPage === i + 1 ? "active" : ""}
@@ -93,7 +95,6 @@ function IpoTable() {
         ))}
     </div>  
       )}
-    </div>
     </div>
   );
 }

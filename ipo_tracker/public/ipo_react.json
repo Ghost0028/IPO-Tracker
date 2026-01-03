@@ -1,26 +1,38 @@
 [
     {
-        "Close_date": "02-Jan-2026",
+        "Close_date": "09-Jan-2026",
         "GMP": "0.00%",
-        "Lot_size": "1600",
-        "Minimum_Capital": 288000,
+        "Lot_size": "3000",
+        "Minimum_Capital": 246000,
         "NII": "<1% ~100%",
-        "Name": "Modern Diagnostic",
-        "Price": "90",
+        "Name": "Victory Electric Vehicles",
+        "Price": "41",
         "QIB": "<1% ~100%",
         "Retail": "<1% ~100%",
         "Type": "SME"
     },
     {
-        "Close_date": "30-Dec-2025",
-        "GMP": "83.33%",
+        "Close_date": "09-Jan-2026",
+        "GMP": "0.00%",
         "Lot_size": "800",
         "Minimum_Capital": 278400,
-        "NII": "8.53 11.72%",
-        "Name": "E to E Transportation",
+        "NII": "<1% ~100%",
+        "Name": "Yajur Fibres",
         "Price": "174",
-        "QIB": "2.25 44.44%",
-        "Retail": "9.73 10.28%",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "SME"
+    },
+    {
+        "Close_date": "08-Jan-2026",
+        "GMP": "33.33%",
+        "Lot_size": "1600",
+        "Minimum_Capital": 259200,
+        "NII": "<1% ~100%",
+        "Name": "Gabion Technologies",
+        "Price": "81",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
         "Type": "SME"
     }
 ]

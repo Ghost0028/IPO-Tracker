@@ -1,24 +1,35 @@
 [
   {
-    "Name":"Modern Diagnostic",
+    "Name":"Victory Electric Vehicles",
     "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
-    "Price":"90",
-    "Lot_size":"1600",
-    "Close_date":"02-Jan-2026",
+    "Price":"41",
+    "Lot_size":"3000",
+    "Close_date":"09-Jan-2026",
     "Type":"SME",
     "QIB":"0.00",
     "NII":"0.00",
     "Retail":"0.00"
   },
   {
-    "Name":"E to E Transportation",
-    "GMP":"\u20b9145 (83.33%) L\/H (\u20b9): 65 \u2193 \/ 145 \u2191",
+    "Name":"Yajur Fibres",
+    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
     "Price":"174",
     "Lot_size":"800",
-    "Close_date":"30-Dec-2025",
+    "Close_date":"09-Jan-2026",
     "Type":"SME",
-    "QIB":"2.25",
-    "NII":"8.53",
-    "Retail":"9.73"
+    "QIB":"0.00",
+    "NII":"0.00",
+    "Retail":"0.00"
+  },
+  {
+    "Name":"Gabion Technologies",
+    "GMP":"\u20b927 (33.33%) L\/H (\u20b9): 25 \u2193 \/ 27 \u2191",
+    "Price":"81",
+    "Lot_size":"1600",
+    "Close_date":"08-Jan-2026",
+    "Type":"SME",
+    "QIB":"0.00",
+    "NII":"0.00",
+    "Retail":"0.00"
   }
 ]

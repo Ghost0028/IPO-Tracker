@@ -1,9 +1,3 @@
-/* Global reset */
-* {
-  box-sizing: border-box; /* padding included in width */
-}
-
-/* Body & HTML */
 body, html {
   margin: 0;
   padding: 0;
@@ -11,11 +5,11 @@ body, html {
   background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
   color: #333;
   min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  /* overflow-x: auto; ✅ allow horizontal scroll if content overflows */
+  max-width: 100%;
+  
+ 
 }
-
+ * { box-sizing: border-box; /* padding included in width */ }
 /* Root mount point created by React */
 #root {
   width: 100%;
@@ -29,31 +23,28 @@ body, html {
   flex: 1;                     /* take all available space inside #root */
   display: flex;
   flex-direction: column;       /* stack header, table, footer */
-  align-items: stretch;         
+  align-items: center;          /* center horizontally */
   justify-content: flex-start;  /* keep content at top */
   text-align: center;
   width: 100%;
-  padding-top: 0;
-  margin-top: 0;
+  padding-top: 0%;
+  box-sizing: border-box;
+  margin-top: 0%;
 }
 
-/* Header */
 .page-header {
   margin-bottom: 2rem;
 }
 
-/* Footer */
 .page-footer {
   margin-top: auto;   /* push footer to bottom if content is short */
   font-size: 0.85rem;
   color: #888;
 }
-
 .disclaimer {
   margin-top: 0.5rem;
   font-size: 0.75rem;
   color: #999;
   max-width: 800px;
   line-height: 1.4;
-  text-align: center;
 }

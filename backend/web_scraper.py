@@ -112,6 +112,8 @@ def collect_and_merge():
     try:
         date_column = 'Close▲▼'
         upcoming_ipos = scrape_url(urls[0], 0)
+        upcoming_ipos=upcoming_ipos.dropna()
+        
         if upcoming_ipos is None:
             logging.error("Upcoming IPOs table not found")
             sys.exit(1)
@@ -128,7 +130,7 @@ def collect_and_merge():
         headers = raw_df.iloc[0]
         data_df = raw_df.iloc[1:].reset_index(drop=True)
         data_df.columns = headers
-        
+        data_df=data_df.dropna()
         merged_df = merge_dataframes(upcoming_ipos, data_df)
 
         column_mapping = {

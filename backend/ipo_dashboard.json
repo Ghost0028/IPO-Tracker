@@ -23,7 +23,7 @@
   },
   {
     "Name":"Gabion Technologies",
-    "GMP":"\u20b925 (30.86%) L\/H (\u20b9): 25 \u2193 \/ 25 \u2191",
+    "GMP":"\u20b927 (33.33%) L\/H (\u20b9): 25 \u2193 \/ 27 \u2191",
     "Price":"81",
     "Lot_size":"1600",
     "Close_date":"08-Jan-2026",
@@ -31,16 +31,5 @@
     "QIB":"0.00",
     "NII":"0.00",
     "Retail":"0.00"
-  },
-  {
-    "Name":"Modern Diagnostic",
-    "GMP":"\u20b917 (18.89%) L\/H (\u20b9): 10 \u2193 \/ 17 \u2191",
-    "Price":"90",
-    "Lot_size":"1600",
-    "Close_date":"02-Jan-2026",
-    "Type":"SME",
-    "QIB":"89.09",
-    "NII":"375.27",
-    "Retail":"178.93"
   }
 ]

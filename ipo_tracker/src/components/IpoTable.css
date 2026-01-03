@@ -29,7 +29,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: white;
   border-radius: 8px;
-  overflow: hidden;
+  
   margin: 0 auto;
 }
 
@@ -134,6 +134,14 @@
   margin-bottom: 1rem;
   gap: 0.5rem;
   flex-wrap: wrap;
+  
+}
+
+select {
+  width: 30%;
+}
+.top-div {
+  max-width: 100%; /*This line fixed my issue of horizontal scrolling beyond screen size*/
 }
 
 .filter-bar label {
@@ -163,18 +171,19 @@
 /* -------------------- Responsive Design -------------------- */
 
 /* Small phones: enable scroll, compact table */
-@media (max-width: 1050px) {
+@media (max-width:450px) and (min-width:0px){
   .ipo-table-container {
-    width: 95%;
+    width: 90%;
     padding: 0.8rem;
     margin: 1rem auto;  
-    overflow-x: auto;           /* ✅ enable horizontal scroll */
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;           
+    
   }
 
   .ipo-table {
     min-width: 700px;           /* ✅ force table wider than viewport */
     table-layout: auto;         /* ✅ natural column sizing */
+    
   }
 
   .ipo-table thead th,
@@ -192,27 +201,51 @@
   .filter-bar {
     flex-direction: column;
     gap: 0.3rem;
+    
+  }
+
+  .filter-bar select {
+    
+    max-width: 50%;
+    font-size: 0.7rem;
+  }
+}
+@media (min-width:451px) and (max-width: 1050px) {
+  .ipo-table-container {
+    width: 95%;
+    padding: 0.8rem;
+    margin: 1rem auto;  
+    overflow-x: auto;           
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ipo-table {
+    min-width: 700px;           /* ✅ force table wider than viewport */
+    table-layout: auto;         /* ✅ natural column sizing */
+  
+  }
+
+  .ipo-table thead th,
+  .ipo-table td {
+    white-space: nowrap;        /* ✅ keep single-line cells */
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .pagination button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    gap: 0.3rem;
+    
   }
 
   .filter-bar select {
     
     max-width: 100%;
-    font-size: 0.85rem;
-  }
-}
-
-/* Tablets */
-/* @media (max-width: 768px) {
-  .ipo-table-container {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .ipo-table thead th {
-    font-size: 0.85rem;
-  }
-
-  .ipo-table td {
     font-size: 0.85rem;
   }
 }
@@ -232,4 +265,4 @@
   .ipo-table td {
     font-size: 1rem;
   }
-} */
+} 

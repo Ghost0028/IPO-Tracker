@@ -32,7 +32,7 @@ string update_subs_rate(const string& sub_rate) {
     }
 }
 
-int readJson(const string& inputPath, const string& outputPath) {   // 🔹 CHANGED: accept paths as arguments
+int readJson(const string& inputPath, const string& outputPath) {   //  CHANGED: accept paths as arguments for helping orchestrator
     ifstream file(inputPath);
     if (!file.is_open()) {
         cerr << "❌ Could not open input file: " << inputPath << endl;

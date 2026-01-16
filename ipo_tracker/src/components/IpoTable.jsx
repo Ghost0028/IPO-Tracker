@@ -41,7 +41,7 @@ function IpoTable() {
       setCurrentPage(1)
       }}>
        <option value="ALL">All Types</option>
-       <option value="Main">Main Board</option>
+       <option value="Mainboard">Main Board</option>
        <option value="SME">SME</option>
     </select>
     </div>  

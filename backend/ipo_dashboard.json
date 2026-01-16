@@ -1,35 +1,101 @@
 [
   {
-    "Name":"Victory Electric Vehicles",
-    "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
-    "Price":"41",
+    "Name":"KRM Ayurveda",
+    "GMP":"\u20b918 (13.33%) L\/H (\u20b9): 15 \u2193 \/ 18 \u2191",
+    "Price":"135",
+    "Lot_size":"1000",
+    "Close_date":"23-Jan-2026",
+    "Type":"SME",
+    "QIB":"0.00",
+    "NII":"0.00",
+    "Retail":"0.00"
+  },
+  {
+    "Name":"Digilogic Systems",
+    "GMP":"\u20b95 (4.81%) L\/H (\u20b9): 5 \u2193 \/ 5 \u2191",
+    "Price":"104",
+    "Lot_size":"1200",
+    "Close_date":"22-Jan-2026",
+    "Type":"SME",
+    "QIB":"0.00",
+    "NII":"0.00",
+    "Retail":"0.00"
+  },
+  {
+    "Name":"Shadowfax",
+    "GMP":"\u20b915 (12.10%) L\/H (\u20b9): 15 \u2193 \/ 16 \u2191",
+    "Price":"124",
+    "Lot_size":"120",
+    "Close_date":"22-Jan-2026",
+    "Type":"Mainboard",
+    "QIB":"0.00",
+    "NII":"0.00",
+    "Retail":"0.00"
+  },
+  {
+    "Name":"Aritas Vinyl",
+    "GMP":"\u20b99 (19.15%) L\/H (\u20b9): 9 \u2193 \/ 9 \u2191",
+    "Price":"47",
     "Lot_size":"3000",
-    "Close_date":"09-Jan-2026",
+    "Close_date":"20-Jan-2026",
     "Type":"SME",
     "QIB":"0.00",
-    "NII":"0.00",
-    "Retail":"0.00"
+    "NII":"0.80",
+    "Retail":"0.26"
   },
   {
-    "Name":"Yajur Fibres",
+    "Name":"Armour Security",
+    "GMP":"\u20b94 (7.02%) L\/H (\u20b9): 1 \u2193 \/ 4 \u2191",
+    "Price":"57",
+    "Lot_size":"2000",
+    "Close_date":"19-Jan-2026",
+    "Type":"SME",
+    "QIB":"1.00",
+    "NII":"0.60",
+    "Retail":"0.38"
+  },
+  {
+    "Name":"Amagi Media Labs",
+    "GMP":"\u20b926 (7.20%) L\/H (\u20b9): 20 \u2193 \/ 43 \u2191",
+    "Price":"361",
+    "Lot_size":"41",
+    "Close_date":"16-Jan-2026",
+    "Type":"Mainboard",
+    "QIB":"33.13",
+    "NII":"38.26",
+    "Retail":"9.54"
+  },
+  {
+    "Name":"Narmadesh Brass",
     "GMP":"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191",
-    "Price":"174",
-    "Lot_size":"800",
-    "Close_date":"09-Jan-2026",
+    "Price":"515",
+    "Lot_size":"240",
+    "Close_date":"16-Jan-2026",
     "Type":"SME",
     "QIB":"0.00",
-    "NII":"0.00",
-    "Retail":"0.00"
+    "NII":"1.92",
+    "Retail":"0.44"
   },
   {
-    "Name":"Gabion Technologies",
-    "GMP":"\u20b927 (33.33%) L\/H (\u20b9): 25 \u2193 \/ 27 \u2191",
-    "Price":"81",
-    "Lot_size":"1600",
-    "Close_date":"08-Jan-2026",
+    "Name":"INDO SMC",
+    "GMP":"\u20b932 (21.48%) L\/H (\u20b9): 25 \u2193 \/ 36 \u2191",
+    "Price":"149",
+    "Lot_size":"1000",
+    "Close_date":"16-Jan-2026",
     "Type":"SME",
-    "QIB":"0.00",
-    "NII":"0.00",
-    "Retail":"0.00"
+    "QIB":"94.94",
+    "NII":"164.59",
+    "Retail":"96.13"
+  },
+  {
+    "Name":"GRE Renew Enertech",
+    "GMP":"\u20b96 (5.71%) L\/H (\u20b9): 6 \u2193 \/ 9 \u2191",
+    "Price":"105",
+    "Lot_size":"1200",
+    "Close_date":"16-Jan-2026",
+    "Type":"SME",
+    "QIB":"14.69",
+    "NII":"24.67",
+    "Retail":"14.10"
   }
 ]

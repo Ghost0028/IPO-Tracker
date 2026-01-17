@@ -1,8 +1,19 @@
 [
     {
-<<<<<<< HEAD
+        "Close_date": "27-Jan-2026",
+        "GMP": "0.00%",
+        "Lot_size": "1000",
+        "Minimum_Capital": 288000,
+        "NII": "<1% ~100%",
+        "Name": "Shayona Engineering",
+        "Price": "144",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "SME"
+    },
+    {
         "Close_date": "23-Jan-2026",
-        "GMP": "13.33%",
+        "GMP": "14.81%",
         "Lot_size": "1000",
         "Minimum_Capital": 270000,
         "NII": "<1% ~100%",
@@ -26,7 +37,7 @@
     },
     {
         "Close_date": "22-Jan-2026",
-        "GMP": "12.10%",
+        "GMP": "7.26%",
         "Lot_size": "120",
         "Minimum_Capital": 14880,
         "NII": "<1% ~100%",
@@ -44,21 +55,11 @@
         "NII": "<1% ~100%",
         "Name": "Aritas Vinyl",
         "Price": "47",
-=======
-        "Close_date": "09-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "3000",
-        "Minimum_Capital": 246000,
-        "NII": "<1% ~100%",
-        "Name": "Victory Electric Vehicles",
-        "Price": "41",
->>>>>>> 1ce6933650710ee1912474b3ad7d7892269022b8
         "QIB": "<1% ~100%",
         "Retail": "<1% ~100%",
         "Type": "SME"
     },
     {
-<<<<<<< HEAD
         "Close_date": "19-Jan-2026",
         "GMP": "7.02%",
         "Lot_size": "2000",
@@ -67,28 +68,6 @@
         "Name": "Armour Security",
         "Price": "57",
         "QIB": "1.00 100.00%",
-=======
-        "Close_date": "09-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "800",
-        "Minimum_Capital": 278400,
-        "NII": "<1% ~100%",
-        "Name": "Yajur Fibres",
-        "Price": "174",
-        "QIB": "<1% ~100%",
-        "Retail": "<1% ~100%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "08-Jan-2026",
-        "GMP": "33.33%",
-        "Lot_size": "1600",
-        "Minimum_Capital": 259200,
-        "NII": "<1% ~100%",
-        "Name": "Gabion Technologies",
-        "Price": "81",
-        "QIB": "<1% ~100%",
->>>>>>> 1ce6933650710ee1912474b3ad7d7892269022b8
         "Retail": "<1% ~100%",
         "Type": "SME"
     }

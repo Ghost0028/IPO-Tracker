@@ -40,8 +40,8 @@ jobs:
           python backend/web_scraper.py
 
       - name: Run processor
-        run: |
-          ./build/logic $GITHUB_WORKSPACE/backend/ipo_dashboard.json $GITHUB_WORKSPACE/ipo_tracker/public/ipo_react.json
+        run: ./build/logic backend/ipo_dashboard.json ipo_tracker/public/ipo_react.json
+
 
       - name: Commit and push updated JSON
         run: |

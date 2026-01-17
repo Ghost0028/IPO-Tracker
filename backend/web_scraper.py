@@ -3,6 +3,7 @@ import sys
 import time
 from io import StringIO
 from datetime import datetime, date
+import os
 
 import pandas as pd
 from selenium import webdriver
@@ -97,6 +98,7 @@ def scrape_url(url, idx):
         driver.quit()
 
 
+
 def merge_dataframes(gmp_df, subs_df):
     """Merge GMP and subscription dataframes on IPO name."""
     gmp_df['Merge_key'] = gmp_df['Name▲▼'].str.split().str[0].str.lower()
@@ -147,8 +149,9 @@ def collect_and_merge():
         merged_df = merged_df.rename(columns=column_mapping)
         merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
         merged_df=merged_df.drop_duplicates(subset=['Name'],keep='first')
-        "Could make a better version where rather than selecting the first one, we choose the one with most values or no nulls"
-        output_path = "./ipo_dashboard.json"
+       
+        script_dir = os.path.dirname(os.path.abspath(__file__)) # Build path to ipo_dashboard.json inside backend/
+        output_path = os.path.join(script_dir, "ipo_dashboard.json")
         merged_df.to_json(output_path, orient='records', indent=2)
         logging.info(f"Data successfully written to {output_path}")
 

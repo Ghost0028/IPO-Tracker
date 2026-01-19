@@ -35,7 +35,7 @@ string update_subs_rate(string sub_rate){
 
 }
 string cutBeforeKeyword(const string& name) { 
-    string keywords[] = {"NSE", "BSE"};
+    string keywords[] = {"NSE", "BSE","IPO"};
      for (const auto& kw : keywords) {
      size_t pos = name.find(kw); 
         if (pos != string::npos) { 

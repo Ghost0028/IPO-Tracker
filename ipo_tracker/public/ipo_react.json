@@ -64,11 +64,11 @@
         "GMP": "2.13%",
         "Lot_size": "3000",
         "Minimum_Capital": 282000,
-        "NII": "<1% ~100%",
+        "NII": "1.03 97.09%",
         "Name": "Aritas Vinyl ",
         "Price": "47",
         "QIB": "<1% ~100%",
-        "Retail": "<1% ~100%",
+        "Retail": "1.78 56.18%",
         "Type": "SME"
     },
     {
@@ -76,11 +76,11 @@
         "GMP": "0.00%",
         "Lot_size": "2000",
         "Minimum_Capital": 228000,
-        "NII": "<1% ~100%",
+        "NII": "1.08 92.59%",
         "Name": "Armour Security ",
         "Price": "57",
         "QIB": "1.00 100.00%",
-        "Retail": "<1% ~100%",
+        "Retail": "2.58 38.76%",
         "Type": "SME"
     }
 ]

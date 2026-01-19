@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 
 # Node/React
+backend/ipo_dashboard.json
 ipo_tracker/node_modules/
 ipo_tracker/build/
 

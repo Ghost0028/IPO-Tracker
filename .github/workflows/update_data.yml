@@ -51,7 +51,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: update processed JSON [skip ci]"
+            git commit -m "chore: update processed JSON"
             git push origin HEAD:${{ github.ref }}
           fi
         env:

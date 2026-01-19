@@ -105,7 +105,7 @@ def merge_dataframes(gmp_df, subs_df):
     subs_df['Merge_key'] = subs_df['IPO Name'].str.split().str[0].str.lower()
 
     merged = gmp_df.merge(subs_df, on='Merge_key', how='left')
-    return merged[['IPO Name', 'GMP▲▼', 'Price (₹)▲▼', 'Lot▲▼', 'Close▲▼',
+    return merged[['Name▲▼', 'GMP▲▼', 'Price (₹)▲▼', 'Lot▲▼', 'Close▲▼',
                    'Type', 'QIB', 'NII / HNI', 'Retail']]
 
 
@@ -114,8 +114,8 @@ def collect_and_merge():
     try:
         date_column = 'Close▲▼'
         upcoming_ipos = scrape_url(urls[0], 0)
-        upcoming_ipos=upcoming_ipos.dropna()
-        
+       
+        upcoming_ipos.dropna(subset=['Name▲▼'],inplace=True)
         if upcoming_ipos is None:
             logging.error("Upcoming IPOs table not found")
             sys.exit(1)
@@ -132,11 +132,14 @@ def collect_and_merge():
         headers = raw_df.iloc[0]
         data_df = raw_df.iloc[1:].reset_index(drop=True)
         data_df.columns = headers
-        data_df=data_df.dropna()
+        
+        data_df.dropna(subset=['IPO Name'],inplace=True)
+       
+
         merged_df = merge_dataframes(upcoming_ipos, data_df)
 
         column_mapping = {
-            'IPO Name': 'Name',
+            'Name▲▼': 'Name',
             'GMP▲▼': 'GMP',
             'Close▲▼': 'Close_date',
             'Listing▲▼': 'Listing_date',
@@ -148,6 +151,7 @@ def collect_and_merge():
 
         merged_df = merged_df.rename(columns=column_mapping)
         merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
+    
         merged_df=merged_df.drop_duplicates(subset=['Name'],keep='first')
        
         script_dir = os.path.dirname(os.path.abspath(__file__)) # Build path to ipo_dashboard.json inside backend/

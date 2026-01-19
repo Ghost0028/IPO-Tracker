@@ -133,7 +133,7 @@ def collect_and_merge():
         data_df = raw_df.iloc[1:].reset_index(drop=True)
         data_df.columns = headers
         
-        data_df.dropna(subset=['IPO Name'],inplace=True)
+        data_df.dropna(subset=['IPO Name','Type'],inplace=True) #Removed ipos which had missing name or type fields.
        
 
         merged_df = merge_dataframes(upcoming_ipos, data_df)
@@ -153,7 +153,7 @@ def collect_and_merge():
         merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
     
         merged_df=merged_df.drop_duplicates(subset=['Name'],keep='first')
-       
+        merged_df=merged_df.fillna("0")
         script_dir = os.path.dirname(os.path.abspath(__file__)) # Build path to ipo_dashboard.json inside backend/
         output_path = os.path.join(script_dir, "ipo_dashboard.json")
         merged_df.to_json(output_path, orient='records', indent=2)

@@ -54,7 +54,7 @@ if (!file.is_open()){  // In case there is no such file present prints error
   file>>j;
   for(  auto &ipo : j){
     string name= ipo.value("Name","");
-    ipo['Name']=cutBeforeKeyword(name);
+    ipo["Name"]=cutBeforeKeyword(name);
     string price= ipo.value("Price","0");
     string gmp =ipo.value("GMP","₹-- (0.00%)");//"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191" need to extract the () part from it
     gmp=extract_gmp_percentage(gmp);

@@ -34,6 +34,15 @@ string update_subs_rate(string sub_rate){
   return ss.str();
 
 }
+string cutBeforeKeyword(const string& name) { 
+    string keywords[] = {"NSE", "BSE"};
+     for (const auto& kw : keywords) {
+     size_t pos = name.find(kw); 
+        if (pos != string::npos) { 
+            return name.substr(0, pos ); 
+    } } 
+    return name; // no keyword found, return original 
+}
 void readJson(const string &inputPath,const string &outputPath){
     ifstream file (inputPath);
 if (!file.is_open()){  // In case there is no such file present prints error
@@ -44,6 +53,8 @@ if (!file.is_open()){  // In case there is no such file present prints error
   json j;
   file>>j;
   for(  auto &ipo : j){
+    string name= ipo.value("Name","");
+    ipo['Name']=cutBeforeKeyword(name);
     string price= ipo.value("Price","0");
     string gmp =ipo.value("GMP","₹-- (0.00%)");//"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191" need to extract the () part from it
     gmp=extract_gmp_percentage(gmp);

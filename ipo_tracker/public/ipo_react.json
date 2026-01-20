@@ -1,5 +1,17 @@
 [
     {
+        "Close_date": "29-Jan-2026",
+        "GMP": "0.00%",
+        "Lot_size": "0",
+        "Minimum_Capital": "Lot size not declared.",
+        "NII": "<1% ~100%",
+        "Name": "NFP Sampoorna Foods ",
+        "Price": "0",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "0"
+    },
+    {
         "Close_date": "27-Jan-2026",
         "GMP": "0.00%",
         "Lot_size": "1500",
@@ -69,18 +81,6 @@
         "Price": "47",
         "QIB": "<1% ~100%",
         "Retail": "1.78 56.18%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "19-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "2000",
-        "Minimum_Capital": 228000,
-        "NII": "1.08 92.59%",
-        "Name": "Armour Security ",
-        "Price": "57",
-        "QIB": "1.00 100.00%",
-        "Retail": "2.58 38.76%",
         "Type": "SME"
     }
 ]

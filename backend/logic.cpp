@@ -72,7 +72,7 @@ if (!file.is_open()){  // In case there is no such file present prints error
     string retail_subscription_rate =ipo.value("Retail","0.0%");
     retail_subscription_rate=update_subs_rate(retail_subscription_rate);
     ipo["Retail"]=retail_subscription_rate;
-    if(lot_size=="0") ipo["Minimum_Capital"]="Lot size not declared.";
+    if(lot_size=="0") ipo["Minimum_Capital"]= "Lot size to be declared";
     else{
     if(ipo["Type"]=="SME")
     ipo["Minimum_Capital"]=stoi(lot_size)*stoi(price)*2;

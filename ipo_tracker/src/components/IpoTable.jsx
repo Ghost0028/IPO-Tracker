@@ -72,7 +72,7 @@ function IpoTable() {
                 <td className="ipo-data">{ipo.Lot_size}</td>
                 <td className="ipo-data">{ipo.Type}</td>
                 <td className="ipo-data">{ipo.GMP}</td>
-                <td className="ipo-data">₹{ipo.Minimum_Capital}</td>
+                <td className="ipo-data">{ipo.Minimum_Capital}</td>
                 <td className="ipo-data">{ipo.Close_date}</td>
                 <td className="ipo-data">{ipo.NII}</td>
                 <td className="ipo-data">{ipo.Retail}</td>

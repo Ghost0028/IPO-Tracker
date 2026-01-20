@@ -9,7 +9,7 @@ function IpoTable() {
   const rowsPerPage=4;
 
   useEffect(() => {
-    fetch('/ipo_react.json')
+    fetch('https://Ghost0028.github.io/IPO-Tracker/ipo_react.json')
       .then(res => {
         if (!res.ok) throw new Error('JSON not found');
         return res.json();

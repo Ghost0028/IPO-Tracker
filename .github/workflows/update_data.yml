@@ -8,8 +8,8 @@ on:
 jobs:
   build-and-update:
     runs-on: ubuntu-latest
-    permissions:            # 🔑 NEW: grant write access to GITHUB_TOKEN
-      contents: write
+    permissions:
+      contents: write        # ✅ still needed for pushing to gh-pages
 
     steps:
       - name: Checkout repository
@@ -41,18 +41,16 @@ jobs:
 
       - name: Run processor
         run: |
-          ./build/logic backend/ipo_dashboard.json ipo_tracker/public/ipo_react.json
+          # 🔑 CHANGE: write output JSON into a temporary folder (not React app)
+          mkdir -p output
+          ./build/logic backend/ipo_dashboard.json output/ipo_react.json
 
-      - name: Commit and push updated JSON
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ipo_tracker/public/ipo_react.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: update processed JSON"
-            git push origin HEAD:${{ github.ref }}
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 🔑 NEW: use Actions token
+      # ❌ REMOVED: Commit/push step that updated main branch (caused Netlify redeploys)
+
+      - name: Deploy JSON to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages   # ✅ separate branch, Netlify won't redeploy
+          publish_dir: ./output      # ✅ only publish the folder with ipo_react.json
+          keep_files: true           # ✅ keeps other files in gh-pages if you add more later

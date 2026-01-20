@@ -1,5 +1,17 @@
 [
     {
+        "Close_date": "30-Jan-2026",
+        "GMP": "0.00%",
+        "Lot_size": "1000",
+        "Minimum_Capital": 129000,
+        "NII": "<1% ~100%",
+        "Name": "Accretion Nutraveda ",
+        "Price": "129",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "0"
+    },
+    {
         "Close_date": "29-Jan-2026",
         "GMP": "0.00%",
         "Lot_size": "0",
@@ -12,10 +24,22 @@
         "Type": "0"
     },
     {
+        "Close_date": "29-Jan-2026",
+        "GMP": "0.00%",
+        "Lot_size": "2000",
+        "Minimum_Capital": 128000,
+        "NII": "<1% ~100%",
+        "Name": "Kasturi Metal Composite ",
+        "Price": "64",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "0"
+    },
+    {
         "Close_date": "27-Jan-2026",
         "GMP": "0.00%",
-        "Lot_size": "1500",
-        "Minimum_Capital": 210000,
+        "Lot_size": "2000",
+        "Minimum_Capital": 280000,
         "NII": "<1% ~100%",
         "Name": "Hannah Joseph Hospital ",
         "Price": "70",
@@ -37,7 +61,7 @@
     },
     {
         "Close_date": "23-Jan-2026",
-        "GMP": "14.81%",
+        "GMP": "15.56%",
         "Lot_size": "1000",
         "Minimum_Capital": 270000,
         "NII": "<1% ~100%",
@@ -61,7 +85,7 @@
     },
     {
         "Close_date": "22-Jan-2026",
-        "GMP": "4.84%",
+        "GMP": "5.24%",
         "Lot_size": "120",
         "Minimum_Capital": 14880,
         "NII": "<1% ~100%",

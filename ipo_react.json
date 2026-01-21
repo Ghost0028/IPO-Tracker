@@ -94,17 +94,5 @@
         "QIB": "<1% ~100%",
         "Retail": "<1% ~100%",
         "Type": "Mainboard"
-    },
-    {
-        "Close_date": "20-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "3000",
-        "Minimum_Capital": 282000,
-        "NII": "1.24 80.65%",
-        "Name": "Aritas Vinyl ",
-        "Price": "47",
-        "QIB": "1.00 100.00%",
-        "Retail": "2.88 34.72%",
-        "Type": "SME"
     }
 ]

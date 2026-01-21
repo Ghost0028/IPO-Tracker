@@ -68,7 +68,7 @@
         "Name": "KRM Ayurveda ",
         "Price": "135",
         "QIB": "<1% ~100%",
-        "Retail": "<1% ~100%",
+        "Retail": "1.68 59.52%",
         "Type": "SME"
     },
     {
@@ -85,14 +85,14 @@
     },
     {
         "Close_date": "22-Jan-2026",
-        "GMP": "1.21%",
+        "GMP": "0.81%",
         "Lot_size": "120",
         "Minimum_Capital": 14880,
         "NII": "<1% ~100%",
         "Name": "Shadowfax Technologies ",
         "Price": "124",
         "QIB": "<1% ~100%",
-        "Retail": "1.43 69.93%",
+        "Retail": "1.74 57.47%",
         "Type": "Mainboard"
     }
 ]

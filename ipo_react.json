@@ -14,11 +14,11 @@
     {
         "Close_date": "29-Jan-2026",
         "GMP": "0.00%",
-        "Lot_size": "0",
-        "Minimum_Capital": "Lot size to be declared",
+        "Lot_size": "2000",
+        "Minimum_Capital": 220000,
         "NII": "<1% ~100%",
         "Name": "NFP Sampoorna Foods ",
-        "Price": "0",
+        "Price": "55",
         "QIB": "<1% ~100%",
         "Retail": "<1% ~100%",
         "Type": "SME"
@@ -61,7 +61,7 @@
     },
     {
         "Close_date": "23-Jan-2026",
-        "GMP": "15.56%",
+        "GMP": "8.89%",
         "Lot_size": "1000",
         "Minimum_Capital": 270000,
         "NII": "<1% ~100%",
@@ -85,14 +85,14 @@
     },
     {
         "Close_date": "22-Jan-2026",
-        "GMP": "3.23%",
+        "GMP": "1.21%",
         "Lot_size": "120",
         "Minimum_Capital": 14880,
         "NII": "<1% ~100%",
         "Name": "Shadowfax Technologies ",
         "Price": "124",
         "QIB": "<1% ~100%",
-        "Retail": "<1% ~100%",
+        "Retail": "1.43 69.93%",
         "Type": "Mainboard"
     }
 ]

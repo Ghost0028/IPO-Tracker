@@ -12,7 +12,31 @@
         "Type": "SME"
     },
     {
-        "Close_date": "29-Jan-2026",
+        "Close_date": "30-Jan-2026",
+        "GMP": "0.00%",
+        "Lot_size": "1000",
+        "Minimum_Capital": 246000,
+        "NII": "<1% ~100%",
+        "Name": "Msafe Equipments ",
+        "Price": "123",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "SME"
+    },
+    {
+        "Close_date": "30-Jan-2026",
+        "GMP": "0.00%",
+        "Lot_size": "1600",
+        "Minimum_Capital": 233600,
+        "NII": "<1% ~100%",
+        "Name": "Kanishk Aluminium India ",
+        "Price": "73",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "SME"
+    },
+    {
+        "Close_date": "30-Jan-2026",
         "GMP": "0.00%",
         "Lot_size": "2000",
         "Minimum_Capital": 220000,
@@ -61,14 +85,14 @@
     },
     {
         "Close_date": "23-Jan-2026",
-        "GMP": "8.89%",
+        "GMP": "4.44%",
         "Lot_size": "1000",
         "Minimum_Capital": 270000,
-        "NII": "<1% ~100%",
+        "NII": "2.23 44.84%",
         "Name": "KRM Ayurveda ",
         "Price": "135",
         "QIB": "<1% ~100%",
-        "Retail": "1.68 59.52%",
+        "Retail": "2.23 44.84%",
         "Type": "SME"
     },
     {
@@ -85,14 +109,14 @@
     },
     {
         "Close_date": "22-Jan-2026",
-        "GMP": "1.21%",
+        "GMP": "0.00%",
         "Lot_size": "120",
         "Minimum_Capital": 14880,
         "NII": "<1% ~100%",
         "Name": "Shadowfax Technologies ",
         "Price": "124",
         "QIB": "<1% ~100%",
-        "Retail": "1.74 57.47%",
+        "Retail": "1.87 53.48%",
         "Type": "Mainboard"
     }
 ]

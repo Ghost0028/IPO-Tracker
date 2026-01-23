@@ -73,10 +73,10 @@
     },
     {
         "Close_date": "27-Jan-2026",
-        "GMP": "4.29%",
+        "GMP": "0.00%",
         "Lot_size": "2000",
         "Minimum_Capital": 280000,
-        "NII": "<1% ~100%",
+        "NII": "1.05 95.24%",
         "Name": "Hannah Joseph Hospital ",
         "Price": "70",
         "QIB": "<1% ~100%",
@@ -88,23 +88,23 @@
         "GMP": "0.00%",
         "Lot_size": "1000",
         "Minimum_Capital": 288000,
-        "NII": "1.43 69.93%",
+        "NII": "1.67 59.88%",
         "Name": "Shayona Engineering ",
         "Price": "144",
         "QIB": "3.33 30.03%",
-        "Retail": "<1% ~100%",
+        "Retail": "1.18 84.75%",
         "Type": "SME"
     },
     {
         "Close_date": "23-Jan-2026",
-        "GMP": "11.11%",
+        "GMP": "12.59%",
         "Lot_size": "1000",
         "Minimum_Capital": 270000,
-        "NII": "4.44 22.52%",
+        "NII": "135.37 0.74%",
         "Name": "KRM Ayurveda ",
         "Price": "135",
-        "QIB": "<1% ~100%",
-        "Retail": "3.68 27.17%",
+        "QIB": "63.31 1.58%",
+        "Retail": "54.21 1.84%",
         "Type": "SME"
     }
 ]

@@ -106,29 +106,5 @@
         "QIB": "<1% ~100%",
         "Retail": "3.68 27.17%",
         "Type": "SME"
-    },
-    {
-        "Close_date": "22-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "1200",
-        "Minimum_Capital": 249600,
-        "NII": "<1% ~100%",
-        "Name": "Digilogic Systems ",
-        "Price": "104",
-        "QIB": "1.60 62.50%",
-        "Retail": "1.08 92.59%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "22-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "120",
-        "Minimum_Capital": 14880,
-        "NII": "<1% ~100%",
-        "Name": "Shadowfax Technologies ",
-        "Price": "124",
-        "QIB": "4.00 25.00%",
-        "Retail": "2.43 41.15%",
-        "Type": "Mainboard"
     }
 ]

@@ -1,5 +1,29 @@
 [
     {
+        "Close_date": "10-Feb-2026",
+        "GMP": "0.00%",
+        "Lot_size": "1200",
+        "Minimum_Capital": 129600,
+        "NII": "<1% ~100%",
+        "Name": "Biopol Chemicals ",
+        "Price": "108",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "0"
+    },
+    {
+        "Close_date": "06-Feb-2026",
+        "GMP": "0.00%",
+        "Lot_size": "2000",
+        "Minimum_Capital": 220000,
+        "NII": "<1% ~100%",
+        "Name": "NFP Sampoorna Foods ",
+        "Price": "55",
+        "QIB": "<1% ~100%",
+        "Retail": "<1% ~100%",
+        "Type": "SME"
+    },
+    {
         "Close_date": "03-Feb-2026",
         "GMP": "0.00%",
         "Lot_size": "800",
@@ -25,7 +49,7 @@
     },
     {
         "Close_date": "30-Jan-2026",
-        "GMP": "8.94%",
+        "GMP": "9.76%",
         "Lot_size": "1000",
         "Minimum_Capital": 246000,
         "NII": "<1% ~100%",
@@ -43,18 +67,6 @@
         "NII": "<1% ~100%",
         "Name": "Kanishk Aluminium India ",
         "Price": "73",
-        "QIB": "<1% ~100%",
-        "Retail": "<1% ~100%",
-        "Type": "SME"
-    },
-    {
-        "Close_date": "30-Jan-2026",
-        "GMP": "0.00%",
-        "Lot_size": "2000",
-        "Minimum_Capital": 220000,
-        "NII": "<1% ~100%",
-        "Name": "NFP Sampoorna Foods ",
-        "Price": "55",
         "QIB": "<1% ~100%",
         "Retail": "<1% ~100%",
         "Type": "SME"

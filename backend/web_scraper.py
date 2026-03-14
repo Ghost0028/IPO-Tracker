@@ -105,14 +105,14 @@ def merge_dataframes(gmp_df, subs_df):
     subs_df['Merge_key'] = subs_df['IPO Name'].str.split().str[0].str.lower()
 
     merged = gmp_df.merge(subs_df, on='Merge_key', how='left')
-    return merged[['Name▲▼', 'GMP▲▼', 'Price (₹)▲▼', 'Lot▲▼', 'Close▲▼',
+    return merged[['Name▲▼', 'GMP▲▼', 'Price (₹)▲▼', 'Lot▲▼', 'Close',
                    'Type', 'QIB', 'NII / HNI', 'Retail']]
 
 
 def collect_and_merge():
     """Scrape both URLs, merge data, and save JSON output."""
     try:
-        date_column = 'Close▲▼'
+        date_column = 'Close'
         upcoming_ipos = scrape_url(urls[0], 0)
        
         upcoming_ipos.dropna(subset=['Name▲▼'],inplace=True)

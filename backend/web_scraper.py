@@ -141,7 +141,7 @@ def collect_and_merge():
         column_mapping = {
             'Name▲▼': 'Name',
             'GMP▲▼': 'GMP',
-            'Close▲▼': 'Close_date',
+            'Close': 'Close_date',
             'Listing▲▼': 'Listing_date',
             'Price (₹)▲▼': 'Price',
             'IPO Size (₹ in cr)▲▼': 'Ipo_size',

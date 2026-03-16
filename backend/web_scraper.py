@@ -159,6 +159,7 @@ def collect_and_merge():
         merged_df['Close_date'] = merged_df['Close_date'].dt.strftime('%d-%b-%Y')
     
         merged_df=merged_df.drop_duplicates(subset=['Name'],keep='first')
+        merged_df[['Price','Lot_size']]=merged_df[['Price','Lot_size']].fillna(0)
         merged_df=merged_df.fillna("0")
         script_dir = os.path.dirname(os.path.abspath(__file__)) # Build path to ipo_dashboard.json inside backend/
         output_path = os.path.join(script_dir, "ipo_dashboard.json")

@@ -114,7 +114,7 @@ def collect_and_merge():
     try:
         date_column = 'Close'
         upcoming_ipos = scrape_url(urls[0], 0)
-        print(upcoming_ipos)
+        
        
         upcoming_ipos.dropna(subset=['Name▲▼'],inplace=True)
         if upcoming_ipos is None:
@@ -134,7 +134,7 @@ def collect_and_merge():
         # data_df = raw_df.iloc[1:].reset_index(drop=True)
         # data_df.columns = headers
 
-        print(raw_df)
+       
         
         raw_df.dropna(subset=['IPO','Type'],inplace=True) #Removed ipos which had missing name or type fields.
        

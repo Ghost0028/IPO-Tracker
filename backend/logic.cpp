@@ -55,11 +55,11 @@ if (!file.is_open()){  // In case there is no such file present prints error
   for(  auto &ipo : j){
     string name= ipo.value("Name","");
     ipo["Name"]=cutBeforeKeyword(name);
-    string price= ipo.value("Price","0");
+    double price= ipo.value("Price",0);
     string gmp =ipo.value("GMP","₹-- (0.00%)");//"\u20b9-- (0.00%) L\/H (\u20b9): 0 \u2193 \/ 0 \u2191" need to extract the () part from it
     gmp=extract_gmp_percentage(gmp);
     ipo["GMP"]=gmp;
-    string lot_size =ipo.value("Lot_size","0");
+    double lot_size =ipo.value("Lot_size",0);
 
     string qib_subscription_rate =ipo.value("QIB","0.0%");
     qib_subscription_rate=update_subs_rate(qib_subscription_rate);
@@ -72,12 +72,12 @@ if (!file.is_open()){  // In case there is no such file present prints error
     string retail_subscription_rate =ipo.value("Retail","0.0%");
     retail_subscription_rate=update_subs_rate(retail_subscription_rate);
     ipo["Retail"]=retail_subscription_rate;
-    if(lot_size=="0") ipo["Minimum_Capital"]= "Lot size to be declared";
+    if(lot_size==0) ipo["Minimum_Capital"]= "Lot size to be declared";
     else{
     if(ipo["Type"]=="SME")
-    ipo["Minimum_Capital"]=stoi(lot_size)*stoi(price)*2;
+    ipo["Minimum_Capital"]=lot_size*price*2;
     else
-    ipo["Minimum_Capital"]=stoi(lot_size)*stoi(price);  
+    ipo["Minimum_Capital"]=lot_size*price;  
     }
   }
   ofstream out(outputPath);

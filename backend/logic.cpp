@@ -60,17 +60,20 @@ if (!file.is_open()){  // In case there is no such file present prints error
     gmp=extract_gmp_percentage(gmp);
     ipo["GMP"]=gmp;
     double lot_size =ipo.value("Lot_size",0);
-
-    string qib_subscription_rate =to_string(ipo.value("QIB","0.0%"));
+    double temp=0.0;
+    temp=ipo.value("QIB",0.0);
+    string qib_subscription_rate =to_string(temp);
     qib_subscription_rate=update_subs_rate(qib_subscription_rate);
     ipo["QIB"]=qib_subscription_rate;
     
-    string nii_subscription_rate =to_string(ipo.value("NII","0.0%"));
+    temp=ipo.value("NII",0.0);
+    string nii_subscription_rate =to_string(temp);
     nii_subscription_rate=update_subs_rate(nii_subscription_rate);
     ipo["NII"]=nii_subscription_rate;
 
-    string retail_subscription_rate =ipo.value("Retail","0.0%");
-    retail_subscription_rate=to_string(update_subs_rate(retail_subscription_rate));
+    temp=ipo.value("Retail",0.0);
+    string retail_subscription_rate =to_string(temp);
+    retail_subscription_rate=update_subs_rate(retail_subscription_rate);
     ipo["Retail"]=retail_subscription_rate;
     if(lot_size==0) ipo["Minimum_Capital"]= "Lot size to be declared";
     else{

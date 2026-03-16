@@ -102,11 +102,11 @@ def scrape_url(url, idx):
 def merge_dataframes(gmp_df, subs_df):
     """Merge GMP and subscription dataframes on IPO name."""
     gmp_df['Merge_key'] = gmp_df['Name▲▼'].str.split().str[0].str.lower()
-    subs_df['Merge_key'] = subs_df['IPO Name'].str.split().str[0].str.lower()
+    subs_df['Merge_key'] = subs_df['IPO'].str.split().str[0].str.lower()
 
     merged = gmp_df.merge(subs_df, on='Merge_key', how='left')
-    return merged[['Name▲▼', 'GMP▲▼', 'Price (₹)▲▼', 'Lot▲▼', 'Close',
-                   'Type', 'QIB', 'NII / HNI', 'Retail']]
+    return merged[['IPO', 'GMP▲▼', 'Price (₹)▲▼', 'Lot', 'Close',
+                   'Type', 'QIB (X)', 'NII (X)', 'Retail (X)']]
 
 
 def collect_and_merge():
@@ -114,6 +114,7 @@ def collect_and_merge():
     try:
         date_column = 'Close'
         upcoming_ipos = scrape_url(urls[0], 0)
+        print(upcoming_ipos)
        
         upcoming_ipos.dropna(subset=['Name▲▼'],inplace=True)
         if upcoming_ipos is None:
@@ -129,24 +130,29 @@ def collect_and_merge():
             logging.error("Subscription status table not found")
             sys.exit(1)
 
-        headers = raw_df.iloc[0]
-        data_df = raw_df.iloc[1:].reset_index(drop=True)
-        data_df.columns = headers
+        # headers = raw_df.iloc[0]
+        # data_df = raw_df.iloc[1:].reset_index(drop=True)
+        # data_df.columns = headers
+
+        print(raw_df)
         
-        data_df.dropna(subset=['IPO Name','Type'],inplace=True) #Removed ipos which had missing name or type fields.
+        raw_df.dropna(subset=['IPO','Type'],inplace=True) #Removed ipos which had missing name or type fields.
        
 
-        merged_df = merge_dataframes(upcoming_ipos, data_df)
+        merged_df = merge_dataframes(upcoming_ipos, raw_df)
 
         column_mapping = {
-            'Name▲▼': 'Name',
+            'IPO': 'Name',
             'GMP▲▼': 'GMP',
             'Close': 'Close_date',
             'Listing▲▼': 'Listing_date',
             'Price (₹)▲▼': 'Price',
             'IPO Size (₹ in cr)▲▼': 'Ipo_size',
-            'Lot▲▼': 'Lot_size',
-            'NII / HNI': 'NII'
+            'Lot': 'Lot_size',
+            'NII (X)': 'NII',
+            'Retail (X)': 'Retail',
+            'QIB (X)': 'QIB'
+
         }
 
         merged_df = merged_df.rename(columns=column_mapping)

@@ -4,7 +4,7 @@
         "GMP": "0.00%",
         "Lot_size": 0.0,
         "Minimum_Capital": "Lot size to be declared",
-        "NII": "<1% ~100%",
+        "NII": "1.160000 86.21%",
         "Name": "Citius Transnet InvIT",
         "Price": 0.0,
         "QIB": "<1% ~100%",
@@ -16,11 +16,11 @@
         "GMP": "4.59%",
         "Lot_size": 1200.0,
         "Minimum_Capital": 235200.0,
-        "NII": "<1% ~100%",
+        "NII": "9.820000 10.18%",
         "Name": "Mehul Telecom",
         "Price": 98.0,
-        "QIB": "<1% ~100%",
-        "Retail": "<1% ~100%",
+        "QIB": "1.340000 74.63%",
+        "Retail": "2.340000 42.74%",
         "Type": "SME"
     }
 ]

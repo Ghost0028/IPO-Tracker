@@ -4,11 +4,11 @@
         "GMP": "0.00%",
         "Lot_size": 3000.0,
         "Minimum_Capital": 300000.0,
-        "NII": "<1% ~100%",
+        "NII": "1.590000 62.89%",
         "Name": "RFBL Flexi Pack",
         "Price": 50.0,
         "QIB": "1.120000 89.29%",
-        "Retail": "<1% ~100%",
+        "Retail": "1.070000 93.46%",
         "Type": "SME"
     },
     {
@@ -16,23 +16,23 @@
         "GMP": "41.86%",
         "Lot_size": 3000.0,
         "Minimum_Capital": 258000.0,
-        "NII": "12.920000 7.74%",
+        "NII": "24.460000 4.09%",
         "Name": "Goldline Pharmaceutical",
         "Price": 43.0,
         "QIB": "1.310000 76.34%",
-        "Retail": "21.290000 4.70%",
+        "Retail": "34.070000 2.94%",
         "Type": "SME"
     },
     {
         "Close_date": "12-May-2026",
-        "GMP": "20.77%",
+        "GMP": "6.01%",
         "Lot_size": 600.0,
         "Minimum_Capital": 219600.0,
-        "NII": "42.800000 2.34%",
+        "NII": "81.540000 1.23%",
         "Name": "Simca Advertising",
         "Price": 183.0,
-        "QIB": "52.560000 1.90%",
-        "Retail": "39.580000 2.53%",
+        "QIB": "101.080000 0.99%",
+        "Retail": "70.890000 1.41%",
         "Type": "SME"
     }
 ]
